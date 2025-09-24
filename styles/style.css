@@ -221,7 +221,7 @@ li, a {
 }
 
 .link-btn {
-  background-color: #131212;
+  background-color: #5a5454;
   color: white;
   border: 2px solid transparent;
   padding: 40px 100px;
@@ -238,7 +238,7 @@ li, a {
   margin-right: 100px;
   
   /* Gradient border using background-clip */
-  background-image: linear-gradient(#343131, #000000), 
+  background-image: linear-gradient(#2e2727, #000000), 
   linear-gradient(to right, #45b7d1, #96ceb4);
   background-origin: border-box;
   background-clip: padding-box, border-box;
