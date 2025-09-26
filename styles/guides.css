@@ -1,0 +1,220 @@
+@charset "UTF-8";
+  
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+Fade in from left animation
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-150px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+*/
+
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #24252A;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+li, a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500px;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 10px;
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-links li a {
+  transition: all 500ms ease 0s;
+}
+
+.nav-links li a:hover {
+  color: #33d0ac;
+}
+
+
+.divider {
+  position: absolute;
+  margin-bottom: 16px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #FFA500;
+}
+
+.container {
+  max-width: 1450px; /* The maximum width your content will grow to */
+  margin: 0 auto;    /* "0" for top/bottom, "auto" for left/right (centers it) */
+  padding: 0 1rem;   /* "0" for top/bottom, "1rem" for left/right */
+}
+
+.luban-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.luban-splash {
+  width: 100%;
+  max-height: 734px;
+  font-size: 18px;
+  line-height: 1.5;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 500ms ease-in-out forwards;
+}
+
+/* This add the fade at the bottom (huge btw)*/
+.luban-banner::after { 
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%; /* Adjust this to control how much of the image fades */
+  background: linear-gradient(to top, #2b2c30 0%, transparent 100%);
+  pointer-events: none; /* This ensures clicks pass through to the image */
+}
+
+.text-overlay {
+  text-align: center;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  margin-top: 22em;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.236);
+  text-shadow: 0px 0px 10em rgb(0, 0, 0, 0.456);
+}
+
+.text-overlay h1 {
+  font-size: 68px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+.text-overlay p {
+  font-size: 48px;
+  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.271);
+  font-weight: bold;
+}
+
+.introduction-section h2 {
+  color: white;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.introduction-section h2::before {
+   content: "";
+   display: inline-block;
+   width: 40px;
+   height: 20px;
+   background-color: #FFA500;
+   clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
+   margin-right: 10px;
+}
+
+.introduction-section h2::after {
+  content: '';
+  display: inline-block;
+  background-color: #FFA500;
+  height: 4px;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.introduction-section p {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.9em;
+  margin-bottom: 15px;
+}
+
+.video-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.video-skills video {
+  width: 800px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tips-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.tips-section h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.tips-section h1::before,
+.tips-section h1::after {
+  content: '';
+  display: inline-block;
+  background-color: #FFA500;
+  height: 4px;
+  flex: 1;
+}
+
+.tips-section p {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.9em;
+  margin-bottom: 15px;
+}
