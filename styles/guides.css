@@ -190,6 +190,7 @@ li, a {
 .tips-section {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .tips-section h1 {
