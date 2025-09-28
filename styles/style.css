@@ -196,6 +196,8 @@ li, a {
 .cat-boom {
   max-width: 50px;
   max-height: 50px;
+  position: absolute;
+  margin-left: 20px;
 }
 
 .actual-winrate-container {

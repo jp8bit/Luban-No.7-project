@@ -193,7 +193,7 @@ li, a {
   position: relative;
 }
 
-.tips-section h1 {
+.tips-section h1, .combo-section h1, .game-progression h1 {
   text-align: center;
   margin-top: 20px;
   font-size: 40px;
@@ -204,7 +204,11 @@ li, a {
 
 
 .tips-section h1::before,
-.tips-section h1::after {
+.tips-section h1::after,
+.combo-section h1::before,
+.combo-section h1::after, 
+.game-progression h1::after,
+.game-progression h1::before {
   content: '';
   display: inline-block;
   background-color: #FFA500;
@@ -212,10 +216,91 @@ li, a {
   flex: 1;
 }
 
-.tips-section p {
+.tips-section p, .combo-section p, .game-progression p {
   margin-top: 20px;
   font-size: 25px;
   font-weight: 500;
   line-height: 1.9em;
   margin-bottom: 15px;
+}
+
+ol > li {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.9em;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+.combo-section h2 {
+  color: white;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.combo-section h2::before, .game-progression h2::before {
+   content: "";
+   display: inline-block;
+   width: 40px;
+   height: 20px;
+   background-color: #FFA500;
+   clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
+   margin-right: 10px;
+}
+ 
+.combo-section h2::after {
+  content: '';
+  display: inline-block;
+  background-color: #FFA500;
+  height: 4px;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.hero-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+.select-hero {
+  margin-top: 50px;
+  font-size: 69px; /* lol */
+  font-weight: bold;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
+}
+
+.hero-selector img {
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+.new-release {
+  background-color: rgb(243, 94, 94);
+  position: absolute;
+  color: rgb(255, 255, 255);
+  padding: 5px 20px;
+  border-radius: 50px;
+  font-size: 35px;
+  font-weight: 500;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -125px;
+  margin-left: 6.9em;
+  font-style: italic;
+  font-weight: bolder;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.407);
+}
+
+.hero-name {
+  margin-top: 30px;
+  font-size: 39px;
+  font-weight: normal;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
+  margin-bottom: 20px;
 }
