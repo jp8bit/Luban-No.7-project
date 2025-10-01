@@ -1,0 +1,313 @@
+@charset "UTF-8";
+  
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+Fade in from left animation
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-150px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+*/
+
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #24252A;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+li, a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500px;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 10px;
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-links li a {
+  transition: all 500ms ease 0s;
+}
+
+.nav-links li a:hover {
+  color: #33d0ac;
+}
+
+
+.divider {
+  position: absolute;
+  margin-bottom: 16px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #a8f888;
+}
+
+.container {
+  max-width: 1450px; /* The maximum width your content will grow to */
+  margin: 0 auto;    /* "0" for top/bottom, "auto" for left/right (centers it) */
+  padding: 0 1rem;   /* "0" for top/bottom, "1rem" for left/right */
+}
+
+.luban-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.luban-splash {
+  width: 100%;
+  max-height: 734px;
+  font-size: 18px;
+  line-height: 1.5;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 500ms ease-in-out forwards;
+}
+
+/* This add the fade at the bottom (huge btw)*/
+.luban-banner::after { 
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%; /* Adjust this to control how much of the image fades */
+  background: linear-gradient(to top, #2b2c30 0%, transparent 100%);
+  pointer-events: none; /* This ensures clicks pass through to the image */
+}
+
+.text-overlay {
+  text-align: center;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  margin-top: 22em;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.236);
+  text-shadow: 0px 0px 10em rgb(0, 0, 0, 0.456);
+}
+
+.text-overlay h1 {
+  font-size: 68px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+.text-overlay p {
+  font-size: 48px;
+  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.271);
+  font-weight: bold;
+}
+
+.cat-throw {
+  position: absolute;
+  width: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 90px;
+}
+
+.introduction-section h2 {
+  color: white;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.introduction-section h2::before {
+   content: "";
+   display: inline-block;
+   width: 40px;
+   height: 20px;
+   background-color: #a8f888;
+   clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
+   margin-right: 10px;
+}
+
+.introduction-section h2::after {
+  content: '';
+  display: inline-block;
+  background-color: #a8f888;
+  height: 4px;
+  flex: 1;
+  margin-left: 10px;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.9em;
+  margin-bottom: 15px;
+}
+
+.build-section h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.build-section h1::before,
+.build-section h1::after {
+  content: '';
+  display: inline-block;
+  background-color: #a8f888;
+  height: 4px;
+  flex: 1;
+}
+
+.item-section {
+  position: relative;
+  display: inline-block;
+}
+
+.item-section img {
+  max-height: 60px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #2c3e50, #4a6572);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+   .item-tooltip {
+      position: relative;
+      display: inline-block;
+      color: #4cc9f0;
+      cursor: pointer;
+      border-bottom: 1px dotted #4cc9f0;
+    }
+    
+    .tooltip-content {
+      visibility: hidden;
+      width: 300px;
+      background-color: #0f3460;
+      color: #e6e6e6;
+      border: 2px solid #4cc9f0;
+      border-radius: 8px;
+      padding: 15px;
+      position: absolute;
+      z-index: 1000;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    
+    .tooltip-content::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -10px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: #4cc9f0 transparent transparent transparent;
+    }
+    
+    .item-tooltip:hover .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .tooltip-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #4cc9f0;
+      padding-bottom: 10px;
+    }
+    
+    .tooltip-image {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+      border: 2px solid #4cc9f0;
+      border-radius: 5px;
+    }
+    
+    .tooltip-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #4cc9f0;
+    }
+    
+    .tooltip-cost {
+      margin-top: 5px;
+      color: gold;
+      font-weight: bold;
+    }
+    
+    .tooltip-stats {
+      margin-top: 10px;
+    }
+    
+    .stat-item {
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .stat-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      background-color: #4cc9f0;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }

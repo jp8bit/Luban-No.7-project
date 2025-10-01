@@ -174,14 +174,14 @@ li, a {
   margin-bottom: 15px;
 }
 
-.video-skills {
+.video-skills, .video-tips {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.video-skills video {
+.video-skills video, .video-tips video {
   width: 800px;
   margin-top: 10px;
   margin-bottom: 10px;
