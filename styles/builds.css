@@ -183,6 +183,19 @@ p {
   margin-bottom: 15px;
 }
 
+.img-build img {
+  max-height: 1200px;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+.img-build {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .build-section h1 {
   text-align: center;
   margin-top: 20px;
@@ -227,7 +240,7 @@ h2::after {
 }
 
 .item-link {
-    color: #1a0dab;
+    color: #a0ffc8;
     text-decoration: underline;
     cursor: pointer;
     font-weight: bold;
@@ -236,7 +249,7 @@ h2::after {
 .tooltip {
     position: absolute;
     background: #242524;
-    border: 2px solid #474544;
+    border: 1.5px solid #a7ecc9;
     border-radius: 8px;
     padding: 10px;
     max-width: 250px;
@@ -269,11 +282,14 @@ h2::after {
 
 .tooltip-effect {
     clear: both;
-    margin-top: 8px;
+    margin-top: 15px;
     font-size: 14px;
     color: #333; /* Make sure text is visible */
 }
 
-.positive { color: green; }
-.negative { color: red; }
-.neutral { color: #666; }
+.positive { color: rgb(156, 236, 156); }
+.neutral { color: #ffffff; }
+.physical-def { color: orange; }
+.magical-def { color: rgb(133, 206, 254); }
+.physical-dmg { color: rgb(248, 95, 19); }
+.physical-item { color: rgb(245, 94, 94); }
