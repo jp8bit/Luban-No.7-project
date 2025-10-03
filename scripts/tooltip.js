@@ -24,9 +24,7 @@ const items = {
             {text: 'Physical Defense +120', type: 'physical-def'},
             {
                 parts: [
-                    { text: 'Reduce the physical damage taken by', type: 'neutral'},
-
-                    { text: ' 10%', type: 'physical-def'}
+                    { text: 'Reduce the physical damage taken by 10%', type: 'physical-def'}
                 ]
             }
         ]
@@ -59,7 +57,44 @@ const items = {
                 ]
              }
         ]
-    }
+    },
+    'sparkforged-dagger': {
+        name: 'Sparkforged Dagger',
+        image: 'images/sparkforged_dagger.webp',
+        cost: '1870 Gold',
+        effects: [
+            { text: 'Attack Speed +35%', type: 'positive'},
+             { text: 'Movement Speed +8%', type: 'positive'},
+             {
+                parts: [
+                    { text: 'basic attacks deal extra ', type: 'neutral'},
+                    { text: '40 to 82 magical damage.', type: 'magical-dmg'},
+                    { text: ' For every three basic attacks, it releases rays of thunder in rapid succession, dealing ', type:'neutral'},
+                    { text: '140 to 420 of magical damage.', type: 'magical-dmg'},
+                ]
+            }
+        ]
+    },
+     'eternity-blade': {
+        name: 'Eternity Blade',
+        image: 'images/eternity_blade.webp',
+        cost: '2140 Gold',
+        effects: [
+            { text: 'Physical Damage +110', type: 'physical-dmg'},
+            { text: 'Crit Chance +25%', type: 'physical-dmg'},
+             {
+                parts: [
+                    { text: 'Receives ', type: 'neutral'},
+                    { text: '20% of critical damage, ', type: 'physical-dmg'},
+                    { text: 'and every ', type:'neutral'},
+                    { text: '2% of critical chance ', type: 'physical-dmg'},
+                    { text: 'increases the ', type: 'neutral'},
+                    { text: 'critical damage by 1% ', type: 'physical-dmg'},
+                    { text: '(up to 50%)', type: 'neutral'}
+                ]
+             }
+        ]
+    },
 }
 
 const tooltip = document.querySelector('.tooltip');
@@ -89,6 +124,7 @@ function showTooltip(event) {
     }
   
 }).join('');
+
 
     tooltip.innerHTML = `
         <img src="${item.image}" alt="${item.name}" class="tooltip-img">

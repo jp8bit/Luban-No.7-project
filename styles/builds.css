@@ -214,17 +214,25 @@ p {
   flex: 1;
 }
 
+.cat-smooch {
+  max-width: 40px;
+  max-height: 40px;
+  margin-left: 10px;
+  position: absolute;
+}
+
 h2 {
   display: flex;
   align-items: center;
   margin-top: 30px;
+  font-size: 40px;
 }
 
 h2::before {
    content: "";
    display: inline-block;
    width: 40px;
-   height: 20px;
+   height: 25px;
    background-color: #a8f888;
    clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
    margin-right: 10px;
@@ -293,3 +301,4 @@ h2::after {
 .magical-def { color: rgb(133, 206, 254); }
 .physical-dmg { color: rgb(248, 95, 19); }
 .physical-item { color: rgb(245, 94, 94); }
+.magical-dmg { color: rgb(203, 118, 203);}
