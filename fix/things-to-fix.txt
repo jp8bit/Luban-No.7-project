@@ -1,0 +1,1 @@
+1 - found a bug, when an tool tip is too big and too the right side, it gets more height and less width. However, when you hover on another tooltip of the same name, it will bug and go way more up than above it. Will fix later

@@ -95,6 +95,98 @@ const items = {
              }
         ]
     },
+     'blood-weeper': {
+        name: 'Bloodweeper',
+        image: 'images/blood_weeper.webp',
+        cost: '1800 Gold',
+        effects: [
+            { text: 'Physical Damage +100', type: 'physical-dmg'},
+            { text: 'Physical Life Steal +25%', type: 'physical-dmg'},
+            { text: 'Max Health +500', type: 'positive'},
+             {
+                parts: [
+                    { text: 'Recovers 400 to 610 life ', type: 'positive'},
+                    { text: 'in 5 seconds when your life points falls below 30%. <br> (20 second cooldown)', type: 'neutral'}
+                ]
+             }
+        ]
+    },
+     'mortal-punisher': {
+        name: 'Mortal Punisher',
+        image: 'images/mortal_punisher.webp',
+        cost: '1860 Gold',
+        effects: [
+            { text: 'Physical Damage +100', type: 'physical-dmg'},
+            { text: 'Attack Speed +15%', type: 'positive'},
+            { text: 'Physical Life Steal +15%', type: 'physical-dmg'},
+             {
+                parts: [
+                    { text: 'Recovers 400 to 610 life ', type: 'positive'},
+                    { text: 'in 5 seconds when your life points falls below 30%. <br> (20 second cooldown)', type: 'neutral'}
+                ]
+             },
+             {
+                parts: [
+                    { text: 'When a skill or a basic attack hits an enemy, their ', type: 'neutral'},
+                    { text: 'life recovery and their life steal are reduced by 35%. ', type: 'debuff'},
+                    { text: 'lasts for 2.5 seconds', type: 'neutral'}
+                ]
+             }
+        ]
+    },
+     'dooms-day': {
+        name: 'Doomsday',
+        image: 'images/doomsday.webp',
+        cost: '2160 Gold',
+        effects: [
+            { text: 'Physical Damage +60', type: 'physical-dmg'},
+            { text: 'Attack Speed +30%', type: 'positive'},
+            { text: 'Physical Life Steal +10%', type: 'physical-dmg'},
+             {
+                parts: [
+                    { text: 'Basic attacks deal extra', type: 'neutral'},
+                    { text: 'physical damage ', type: 'physical-dmg'},
+                    { text: 'equivalent to ', type: 'neutral'},
+                    { text: "8% of the target's current health.", type: 'positive'}
+                ]
+             }
+        ]
+    },
+     'day-breaker': {
+        name: 'Daybreaker',
+        image: 'images/day_breaker.webp',
+        cost: '2760 Gold',
+        effects: [
+            { text: 'Physical Damage +50', type: 'physical-dmg'},
+            { text: 'Attack Speed +30%', type: 'positive'},
+            { text: 'Crit Chance +10%', type: 'physical-dmg'},
+             {
+                parts: [
+                    { text: 'Physical Penetration +15%<br>', type: 'physical-dmg'},
+                    { text: '(Doubled on ranged heroes)', type: 'neutral'},
+                ]
+             },
+             {
+                parts: [
+                    { text: 'Basic attack damage +50 <br> (Doubled on range heroes)', type: 'neutral'}
+                ]
+             }
+        ]
+    },
+    'star-breaker': {
+        name: 'Starbreaker',
+        image: 'images/star_breaker.webp',
+        cost: '2100 Gold',
+        effects: [
+            { text: 'Physical Damage +80', type: 'physical-dmg'},
+            { text: 'Cooldown Reduction +10%', type: 'positive'},
+             {
+                parts: [
+                    { text: 'Physical Penetration +40%', type: 'physical-dmg'},
+                ]
+             },
+        ]
+    },
 }
 
 const tooltip = document.querySelector('.tooltip');
@@ -102,7 +194,7 @@ const tooltip = document.querySelector('.tooltip');
 document.querySelectorAll('.item-link').forEach((link) => {
     link.addEventListener('mouseover', showTooltip);
     link.addEventListener('mouseout', hideTooltip);
-    // Remove the mousemove event listener since we don't want it to follow mouse
+    // Remove the mousemove event listener since we don't want it to follow mouse it was kinda a dumb idea anyway lol, might adjust for it to show it at the bottom if he viewport blocks it though
 });
 
 function showTooltip(event) {
