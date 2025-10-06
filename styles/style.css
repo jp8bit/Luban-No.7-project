@@ -314,6 +314,7 @@ li, a {
   font-size: 69px; /* lol */
   font-weight: bold;
   text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
+  border-top: 3px solid #FFA500;
 }
 
 .hero-selector img {
@@ -326,14 +327,14 @@ li, a {
   position: absolute;
   color: rgb(255, 255, 255);
   padding: 5px 20px;
+  font-size: 30px;
   border-radius: 50px;
-  font-size: 35px;
-  font-weight: 500;
+  font-weight: 800;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: -125px;
-  margin-left: 6.9em;
+  margin-left: 7.3em;
   font-style: italic;
 }
 

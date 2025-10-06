@@ -184,9 +184,178 @@ const items = {
                 parts: [
                     { text: 'Physical Penetration +40%', type: 'physical-dmg'},
                 ]
-             },
+             }
         ]
     },
+    'siege-breaker': {
+        name: 'Siegebreaker',
+        image: 'images/siege_breaker.webp',
+        cost: '2680 Gold',
+        effects: [
+            { text: 'Physical Damage +170', type: 'physical-dmg'},
+             {
+                parts: [
+                    { text: 'Deals 30% extra damage to enemies with less than 50% health', type: 'neutral'},
+                ]
+             }
+        ]
+    },
+    'succubus-cloak': {
+        name: 'Succubus Cloak',
+        image: 'images/succubus_cloak.webp',
+        cost: '2080 Gold',
+        effects: [
+            { text: 'Magical Defense +200', type: 'magical-def'},
+            { text: 'Max Health +1000', type: 'positive'},
+            { text: 'Health recovery/5 seconds +100', type:'positive'},
+             {
+                parts: [
+                    { text: 'Grants a shield that nullifies between 100 to 1500 of ', type: 'neutral'},
+                    { text: 'magical damage ', type: 'magical-def'},
+                    { text: 'outside of combat.', type: 'neutral'}
+                ]
+             },
+             {
+                parts: [
+                    { text: 'increases the ', type: 'neutral'},
+                    { text: 'magical defense between 8 to 120', type: 'magical-def'}
+                ]
+             }
+        ]
+    },
+    'ominous-premonition': {
+        name: 'Ominous Premonition',
+        image: 'images/ominous_premonition.webp',
+        cost: '2150 Gold',
+        effects: [
+            { text: 'Physical Defense +270', type: 'physical-def'},
+            { text: 'Max Health +1200', type: 'positive'},
+             {
+                parts: [
+                    { text: 'When receiving damage, lowers the ', type: 'neutral'},
+                    { text: 'attack speed of the attacker in 40% ', type: 'debuff'},
+                    { text: 'and their ', type: 'neutral'},
+                    { text: 'movement speed between 7.5% to 15% ', type: 'debuff'},
+                    { text: 'for 3 seconds.', type: 'neutral'}
+                ]
+             }
+        ]
+    },
+     'pure-sky': {
+        name: 'Pure sky',
+        image: 'images/pure_sky.webp',
+        cost: '2120 Gold',
+        effects: [
+            { text: 'Physical Damage +100', type: 'physical-dmg'},
+            { text: 'Cooldown Reduction +10%', type: 'positive'},
+            { text: 'Max Health +500', type: 'positive'},
+             {
+                parts: [
+                    { text: 'Skills deal ', type: 'neutral'},
+                    { text: '15 to 30% ', type: 'debuff'},
+                    { text: 'of slow to the first enemy hero hit and ', type: 'neutral'},
+                    { text: 'lower the damage received by that enemy in 20% ', type: 'debuff'},
+                    { text: 'for 3 seconds. <br> (8 second cooldown)', type: 'neutral'}
+                ]
+             },
+             {
+                parts: [
+                    { text: 'Active ability: Grants ', type: 'neutral'},
+                    { text: '35% of damage reduction ', type: 'positive'},
+                    { text: 'for 3 seconds <br> (90 second cooldown)', type: 'neutral'}
+                ]
+             }
+        ]
+    },
+     'sun-chaser': {
+        name: 'Sunchaser',
+        image: 'images/sun_chaser.webp',
+        cost: '2050 Gold',
+        effects: [
+            { text: 'Attack Speed +25%', type: 'positive'},
+            { text: 'Crit Chance +10%', type: 'physical-dmg'},
+            { text: 'Movement Speed +5%', type: 'positive'},
+             {
+                parts: [
+                    { text: 'Damage from basic attacks +50 <br> (doubled on ranged heroes)', type: 'neutral'}
+                ]
+             },
+             {
+                parts: [
+                    { text: 'Active ability: Increases the ', type: 'neutral'},
+                    { text: 'range of the basic attack in 150 ', type: 'positive'},
+                    { text: 'and the ', type: 'neutral'},
+                    { text: 'movement speed by 20% ', type: 'positive'},
+                    { text: 'for 5 seconds <br> (60 second cooldown)', type: 'neutral'}
+                ]
+             }
+        ]
+    },
+    'sky-dome': {
+        name: 'Sky dome',
+        image: 'images/sky_dome.webp',
+        cost: '3370 Gold',
+        effects: [
+            { text: 'Physical Damage +100', type: 'physical-dmg'},
+            { text: 'Cooldown Reduction +10%', type: 'positive'},
+            { text: 'Max Health +500', type: 'positive'},
+             {
+                parts: [
+                    { text: 'Skills deal ', type: 'neutral'},
+                    { text: '15 to 30% ', type: 'debuff'},
+                    { text: 'of slow to the first enemy hero hit and ', type: 'neutral'},
+                    { text: 'lower the damage received by that enemy in 20% ', type: 'debuff'},
+                    { text: 'for 3 seconds. <br> (8 second cooldown)', type: 'neutral'}
+                ]
+             },
+             {
+                parts: [
+                    { text: 'Active ability: Cleanses all crownd control effects. Grants ', type: 'neutral'},
+                    { text: '40% of damage reduction ', type: 'positive'},
+                    { text: 'and increasing ', type: 'neutral'},
+                    { text: 'movement speed by 30%, ', type: 'positive'},
+                    { text: 'ignoring terrain ', type: 'physical-def'},
+                    { text: 'for 3 seconds. ', type: 'neutral'},
+                    { text: 'Defeating an enemy hero will reset the duration of the effect. <br> (90 second cooldown)', type: 'neutral'}
+                ]
+             }
+        ]
+    },
+    'sage-sanctuary': {
+        name: "Sage's Sanctuary",
+        image: 'images/sage_sanctuary.webp',
+        cost: '2100 Gold',
+        effects: [
+            { text: 'Physical Defense +140', type: 'physical-def'},
+            { text: 'Magical Defense +140', type: 'magical-def'},
+             {
+                parts: [
+                    { text: 'Ressurects ', type: 'physical-def'},              
+                    { text: 'the bearer 2 seconds after they were defeated and restores between ', type: 'neutral'},
+                    { text: '2100 to 3500 of health. ', type: 'positive'},
+                    { text: 'This effect can only be triggered two times per match <br> (150 second cooldown) ', type: 'neutral'}
+                ]
+             }
+        ]
+    },
+    'destiny': {
+        name: 'Destiny',
+        image: 'images/destiny.webp',
+        cost: '1900 Gold',
+        effects: [
+            { text: 'Physical Damage +60', type: 'physical-dmg'},
+            { text: 'Cooldown Reduction +5%', type: 'positive'},
+             {
+                parts: [
+                    { text: 'When receiving lethal damage, instead of dying immediately, gains the effect ', type: 'neutral'},
+                    { text: 'Invincible ', type: 'physical-def'},
+                    { text: 'and ', type: 'neutral'},
+                    { text: '30% of increased movement speed ', type: 'positive'},
+                    { text: 'for 1 seconds. (0.5 seconds for ranged heroes) <br> (120 second cooldown)', type: 'neutral'}
+                ]
+             },
+        ]
+    },   
 }
 
 const tooltip = document.querySelector('.tooltip');

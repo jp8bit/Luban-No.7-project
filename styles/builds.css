@@ -302,6 +302,51 @@ h2::after {
     color: #333; /* Make sure text is visible */
 }
 
+.hero-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+.select-hero {
+  margin-top: 50px;
+  font-size: 69px; /* lol */
+  font-weight: bold;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
+  border-top: 3px solid #a7ecc9;
+}
+
+.hero-selector img {
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+.new-release {
+  background-color: rgb(243, 94, 94);
+  position: absolute;
+  color: rgb(255, 255, 255);
+  padding: 5px 20px;
+  font-size: 30px;
+  border-radius: 50px;
+  font-weight: 800;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -125px;
+  margin-left: 7.3em;
+  font-style: italic;
+}
+
+.hero-name {
+  margin-top: 30px;
+  font-size: 39px;
+  font-weight: normal;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
+  margin-bottom: 20px;
+}
+
 .positive { color: rgb(156, 236, 156); }
 .neutral { color: #ffffff; }
 .physical-def { color: orange; }
