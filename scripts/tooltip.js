@@ -358,13 +358,82 @@ const items = {
     },   
 }
 
+const arcana = {
+    'calamity': {
+        name: 'Calamity',
+        image: 'images/Calamity_Lv_V.webp',
+        effects: [
+            { text: 'Crit Chance +1.6%', type: 'physical-item'}
+        ]
+    },
+
+    'red-moon': {
+        name: 'Red Moon',
+        image: 'images/Red_Moon_Lv_V.webp',
+        effects: [
+            { text: 'Attack Speed +1.6', type: 'physical-item'},
+            { text: 'Crit Chance +0.5%', type: 'physical-item'}
+        ]
+    },
+
+    'mutation': {
+        name: 'Mutation',
+        image: 'images/Mutation_Lv_V.webp',
+        effects: [
+            { text: 'Physical Attack +2', type: 'physical-item'},
+            { text: 'Physical Pierce +3.6', type: 'physical-item'}
+        ]
+    },
+
+    'hunt': {
+        name: 'Hunt',
+        image: 'images/Hunt_Lv_V.webp',
+        effects: [
+            { text: 'Attack Speed +1', type: 'physical-item'},
+            { text: 'Movement Speed +1', type: 'positive'}
+        ]
+    },
+
+    'reaver': {
+        name: 'Reaver',
+        image: 'images/Reaver_Lv_V.webp',
+        effects: [
+            { text: 'Physical Life Steal +1.6%', type: 'physical-item'},
+        ]
+    },
+
+    'stealth': {
+        name: 'Stealth',
+        image: 'images/Stealth_Lv_V.webp',
+        effects: [
+            { text: 'Physical Attack +1.6', type: 'physical-item'},
+            { text: 'Movement Speed +1', type: 'positive'}
+        ]
+    },
+
+    'eagle-eye': {
+        name: 'Eagle Eye',
+        image: 'images/Eagle_Eye_Lv_V.webp',
+        effects: [
+            { text: 'Physical Attack +0.9', type: 'physical-item'},
+            { text: 'Physical Pierce +6.4', type: 'physical-item'}
+        ]
+    },
+}
+
+
 const tooltip = document.querySelector('.tooltip');
+const arcanaTooltip = document.querySelector('.arcana-tooltip');
 
 document.querySelectorAll('.item-link').forEach((link) => {
     link.addEventListener('mouseover', showTooltip);
     link.addEventListener('mouseout', hideTooltip);
-    // Remove the mousemove event listener since we don't want it to follow mouse it was kinda a dumb idea anyway lol, might adjust for it to show it at the bottom if he viewport blocks it though
 });
+
+document.querySelectorAll('.arcana-link').forEach((link) => {
+    link.addEventListener('mouseover', showArcanaTooltip);
+    link.addEventListener('mouseout', hideArcanaTooltip)
+})
 
 function showTooltip(event) {
     const itemId = event.target.getAttribute('data-item');
@@ -388,33 +457,64 @@ function showTooltip(event) {
 
 
     tooltip.innerHTML = `
+      <div class="tooltip-header">
         <img src="${item.image}" alt="${item.name}" class="tooltip-img">
-        <div class="tooltip-name">${item.name}</div>
-        <div class="tooltip-cost">Cost: ${item.cost}</div>
-        ${effectsHTML}
+        <div>
+            <div class="tooltip-name">${item.name}</div>
+            <div class="tooltip-cost">Cost: ${item.cost}</div>
+        </div>
+      </div>
+     ${effectsHTML}
     `;
 
     // Show the tooltip
     tooltip.style.display = 'block';
     
     // Position directly above the item that was hovered
-    positionTooltip(event.target);
+    positionTooltip(event.target, tooltip);
 }
 
 function hideTooltip() {
     tooltip.style.display = 'none';
 }
 
-function positionTooltip(element) {
+function showArcanaTooltip (event) {
+    const arcanaId = event.target.getAttribute('data-arcana');
+    const arcanaData = arcana[arcanaId];
+
+    if (!arcanaData) return;
+
+    const effectsHTML = arcanaData.effects.map(effect =>
+       `<div class="tooltip-effect ${effect.type}">${effect.text}</div>`
+  ).join('');
+
+  arcanaTooltip.innerHTML = `
+     <div class="tooltip-header-arcana">
+        <img src="${arcanaData.image}" alt="${arcanaData.name}" class="tooltip-img">
+        <div class="tooltip-name">${arcanaData.name}</div>
+    </div>
+    ${effectsHTML}
+  `;
+
+  arcanaTooltip.style.display = 'block';
+  positionTooltip(event.target, arcanaTooltip);
+}
+
+function hideArcanaTooltip() {
+    arcanaTooltip.style.display = 'none'
+}
+
+// FIXED: Use tooltipElement parameter instead of hardcoded tooltip variable
+function positionTooltip(element, tooltipElement) {
     const rect = element.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
     
     // Center above the element
     const x = rect.left + scrollLeft + (rect.width / 2);
-    const y = rect.top + scrollTop - tooltip.offsetHeight - 10; // 10px gap above
+    const y = rect.top + scrollTop - tooltipElement.offsetHeight - 10; // 10px gap above
     
-    tooltip.style.left = x + 'px';
-    tooltip.style.top = y + 'px';
-    tooltip.style.transform = 'translateX(-50%)'; // This centers it
+    tooltipElement.style.left = x + 'px';
+    tooltipElement.style.top = y + 'px';
+    tooltipElement.style.transform = 'translateX(-50%)'; // This centers it
 }

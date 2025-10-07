@@ -203,7 +203,7 @@ p {
   flex-direction: column;
 }
 
-.build-section h1 {
+.build-section h1, .arcana-section h1 {
   text-align: center;
   margin-top: 20px;
   font-size: 40px;
@@ -213,10 +213,12 @@ p {
 }
 
 .build-section h1::before,
-.build-section h1::after {
+.build-section h1::after,
+.arcana-section h1::before,
+.arcana-section h1::after {
   content: '';
   display: inline-block;
-  background-color: #a8f888;
+  background-color: #bc6ef0;
   height: 4px;
   flex: 1;
 }
@@ -254,6 +256,28 @@ h2::after {
   margin-left: 10px;
 }
 
+.red-arcana{
+  color: #e85e5e;
+}
+
+.blue-arcana {
+  color: #7878ff;
+}
+
+.green-arcana {
+  color: rgb(133, 214, 133);
+}
+
+.red-side::before,
+.red-side::after {
+  background-color: #e85e5e;
+}
+
+.blue-side::before,
+.blue-side::after {
+  background-color: #5858f0;
+}
+
 .item-link {
     color: #a0ffc8;
     text-decoration: underline;
@@ -261,7 +285,7 @@ h2::after {
     font-weight: bold;
 }
 
-.tooltip {
+.tooltip, .arcana-tooltip {
     position: absolute;
     background: #242524;
     border: 1.5px solid #a7ecc9;
@@ -277,12 +301,38 @@ h2::after {
     top: 0;
 }
 
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tooltip-header-arcana {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.arcana-link {
+   text-decoration: underline;
+   cursor: pointer;
+   font-weight: bold;
+}
+
 .tooltip-img {
-    width: 50px;
-    height: 50px;
-    float: left;
-    margin-right: 8px;
-    border: 1px solid #ccc;
+   width: 50px;
+   height: 50px;
+   margin-right: 27px;
+   border: 1px solid #ccc;
+   flex-shrink: 0;
+}
+
+.arcana-tooltip img {
+  border: none;
+  margin-left: 30px;
+  margin-bottom: 6px;
 }
 
 .tooltip-name {
