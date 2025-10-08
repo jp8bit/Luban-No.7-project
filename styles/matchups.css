@@ -208,3 +208,20 @@ h2::after {
   flex: 1;
   margin-left: 10px;
 }
+.matchup-section h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.matchup-section h1::before,
+.matchup-section h1::after {
+  content: '';
+  display: inline-block;
+  background-color: #bc6ef0;
+  height: 4px;
+  flex: 1;
+}
