@@ -4,7 +4,43 @@ const heroes = {
     matchup: [
       { text: '50/50, kinda skill dependent', type: 'neutral-matchup'}
     ],
-    explanation: 'This matchup is oddly even and super playable despite being against Marco Polo.'
+    explanation: `This matchup is oddly even and super playable despite being against Marco Polo. At levels 1-3 you should have the advantage, but do be more careful when reaching level 4, especially if he has purify. Trust me when I say that Marco with purify is more annoying than with stun, because if he has stun and he ults on you, you can simply S2 to knock him back, but if he has puri you can't do that, meaning you'll have to most likely waste flash. <br> <br> Also, some Marcos tend to clear small creeps before going to lane, and they can be especially cheeky and clear yours. <strong>You can heavily punish this</strong>. Fast clear first wave and go to the river to check if he is doing yours, if he is he should have just finished it. You are level two and he level one, so he mostly likely can't escape you, meaning you got a kill or wasted a stun/puri. <br> <br> Late game remember to keep your distance also, he can one tap you with ult. By the way, I highly recommend building <span class="item-link physical-def" data-item="ominous-premonition">Ominous Premonition</span>`
+  },
+
+  'arli': {
+    name: 'Gongsun Li (Arli)',
+    matchup: [
+      { text: 'Unfavorable, super tough matchup', type: 'negative-matchup'}
+    ],
+    explanation: `This matchup sucks lol. Arli wins pretty much against any ADC and for Luban that is no different, as her S2 can take down both his S1 and S2. Fortunately though, she can't block his enhanced basic attack, so make sure to take advantage off that and try your best to not get on a 1 vs 1 situation since most of the time you will lose. She's your second ban priority, so you shouldn't find her much, but if that is the case, just pray your team is good lol
+    `
+  },
+
+    'alessio': {
+    name: 'Alessio',
+    matchup: [
+      { text: '50/50, kinda annoying but definitely winnable', type: 'neutral-matchup'}
+    ],
+    explanation: `The problem is mainly due to his S2, the smoke bomb he throws creates a mist that makes him invisible and pretty much immune to basic attacks. However, you should still be able to outdamage him if you combo correctly and not miss your skills. (Which is kinda hard, considering he flies so much) At late you should outvalue him so just play it safe.
+    `
+  },
+
+    'agudo': {
+    name: 'Agudo',
+    matchup: [
+      { text: 'Favorable, not too much a problem', type: 'positive-matchup'}
+    ],
+    explanation: `Recently, she has received another rework which now makes her suitable for the farm lane, and she can be a bit annoying. Fortunately, for Luban it isn't a problem. His enhanced basic attacks pierce and will kill the minions she spawns, and you always outdamage her, especially with <span class="item-link" data-item="boots-of-fortitude">Defense Boots</span> to mitigate he damage you will take. All in all, just a good matchup.
+    `
+  },
+
+   'aoyin': {
+    name: "Ao'yin (Loong)",
+    matchup: [
+      { text: 'Early game is favorable, but late game is tricky', type: 'neutral-matchup'}
+    ],
+    explanation: `At early your pretty much dominate with not much trouble, as you always out-trade Ao'yin, especially with <span class="item-link" data-item="boots-of-fortitude">Defense Boots</span>. (I know i glaze these but srsl they are great) In late the game is a bit more complicated, as he will most likely one shot you with his combo if you are not careful. That said, in teamfights you will provide way more just be careful not to feed him early, as the game will get really tough if he is ahead.
+    `
   },
 }
 
@@ -14,9 +50,15 @@ const generalThreats = {
     threats: [
       {
         hero: 'Luna',
-        image: ''
+        image: 'otherHeroes/Luna-circle.webp',
+        severity: 'high',
+        reason: 'Disgusting amount of mobility and damage.'
       }
-    ]
+    ],
+
+    explanation: `
+    DON'T PICK LUBAN NO.7 INTO LUNA PLSSS. This matchup is actual hell, she can close in on you very fast and her dashes will cause you to miss your enhanced autos and S2. I strongly recommend to ban her to avoid that nonsense, as she is the only one here where the matchup feels like torture. If you somehow found yourself in this situation, try your best not feed her too much and try to bring the game to late game. At late game she is much more manageable, as you will start outhealing her damage, especially if you position yourself well and have bought <span data-item="succubus-cloak" class="item-link magical-def">Succubus Cloak</span>. (which is a must to buy btw, try to get it on your forth item).
+    `
   }
 } 
 
@@ -26,7 +68,7 @@ document.querySelectorAll('.matchup-link').forEach((link) => {
   link.addEventListener('click', function(event) {
     const heroId = event.currentTarget.getAttribute('data-hero');
     
-    if (heroId === 'general_threats') {
+    if (heroId === 'general-threats') {
       showGeneralThreats();
     } else {
       showHeroExplanation(heroId);
@@ -51,5 +93,29 @@ function showHeroExplanation (heroId) {
     ${matchupHTML}
   </div>
   <div class="explanation-text">${heroData.explanation}</div>
+  `
+}
+
+function showGeneralThreats () {
+  const threatsData = generalThreats['general-threats'];
+
+  const threatsHTML = threatsData.threats.map(threat => `
+    <div class="threat-item ${threat.severity}">
+      <img src="${threat.image}" alt="${threat.hero}" class="threat-image">
+      <div class="threat-info"
+        <div class="threat-name">${threat.hero}</div>
+        <div class="threat-reason">${threat.reason}</div>
+    </div>    
+    `
+  ).join('');
+  
+  matchupExplanation.innerHTML = `
+  <div class="threats-header"
+    <div class="hero-name">${threatsData.name}
+  </div>
+  <div class="threats-list">
+    ${threatsHTML}
+  </div>
+  <div class="explanation-text">${threatsData.explanation}</div> 
   `
 }

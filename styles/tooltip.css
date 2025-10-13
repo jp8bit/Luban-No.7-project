@@ -1,0 +1,73 @@
+.item-link {
+    color: #a0ffc8;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tooltip, .arcana-tooltip {
+    position: absolute;
+    background: #242524;
+    border: 1.5px solid #a7ecc9;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 250px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: none;
+    /* Add these to ensure proper positioning */
+    transform: translateX(-50%);
+    left: 0;
+    top: 0;
+}
+
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tooltip-header-arcana {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.arcana-link {
+   text-decoration: underline;
+   cursor: pointer;
+   font-weight: bold;
+}
+
+.tooltip-img {
+   width: 50px;
+   height: 50px;
+   margin-right: 27px;
+   border: 1px solid #ccc;
+   flex-shrink: 0;
+}
+
+.arcana-tooltip img {
+  border: none;
+  margin-left: 30px;
+  margin-bottom: 6px;
+}
+
+.tooltip-name {
+    font-weight: bold;
+    color: white;
+}
+
+.tooltip-cost {
+    color: #D4AF37;
+    font-weight: bold;
+}
+
+.tooltip-effect {
+    clear: both;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333; /* Make sure text is visible */
+}
