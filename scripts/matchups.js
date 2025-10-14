@@ -42,6 +42,34 @@ const heroes = {
     explanation: `At early your pretty much dominate with not much trouble, as you always out-trade Ao'yin, especially with <span class="item-link" data-item="boots-of-fortitude">Defense Boots</span>. (I know i glaze these but srsl they are great) In late the game is a bit more complicated, as he will most likely one shot you with his combo if you are not careful. That said, in teamfights you will provide way more just be careful not to feed him early, as the game will get really tough if he is ahead.
     `
   },
+
+   'chano': {
+    name: "Chano",
+    matchup: [
+      { text: 'Early game is favorable, but late game is super hard', type: 'neutral-matchup'}
+    ],
+    explanation: `Early this matchup is good. Once again you out-damage the enemy and his wolves will get killed by your pierce. <br> <br>
+    However, this changes <strong>dramatically</strong> in late, as Chano has one of the strongest late games of any hero in general. Essentially, try to take the lead in early game and end it early. Trust me, you do not want to deal with a late game Chano.
+    `
+  },
+
+   'consort-yu': {
+    name: "Consort Yu ji",
+    matchup: [
+      { text: '50/50, but leaning more to Luban No.7', type: 'neutral-matchup'}
+    ],
+    explanation: `Idk, this matchup is just fine I guess. Her S2 can be a little annoying, but you should out-range her so just keeping pokingg and baiting out her S2 for big damage, and try to evade her S1 as much as possible. You do lose a 1v1 level four though so be mindful of that. At late you'll need to be a little careful, as she will do a lot of damage and her ult deals a <strong>90%</strong> slow, pretty much killing any squishy, but you will provide waaaaaay more in teamfights so thats good. Stay back at teamfights, only advance if she wasted her S2.
+    `
+  },
+
+  'di-renjie': {
+    name: "Di Renjie",
+    matchup: [
+      { text: '50/50, but leaning more towards Di Renjie', type: 'neutral-matchup'}
+    ],
+    explanation: `Di Renjie just has a better kit in general lol. As you may have read at the builds section, you <em>can</em> win against him at level one, but it's tough. You'll need to drag him to your minions and hit him as far away as you can not let his S1 get too much value. An
+    `
+  },
 }
 
 const generalThreats = {
