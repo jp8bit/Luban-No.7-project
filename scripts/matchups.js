@@ -165,21 +165,87 @@ const heroes = {
 
 const generalThreats = {
   'general-threats': {
-    name: 'General Threats to Avoid',
+    name: 'General Threats to Avoid (From most dangerous to least)',
     threats: [
       {
         hero: 'Luna',
         image: 'otherHeroes/Luna-circle.webp',
         severity: 'high',
         reason: 'Disgusting amount of mobility and damage.'
-      }
+      },
+      {
+        hero: 'Jing',
+        image: 'otherHeroes/Jing-circle.webp',
+        severity: 'high',
+        reason: 'Also disgunting amount of mobility and damage.'
+      },
+      {
+        hero: 'Feyd',
+        image: 'otherHeroes/Feyd-circle.webp',
+        severity: 'high',
+        reason: 'Disgusting amount of mobility and damage (there is a pattern as you can see).'
+      },
+      {
+        hero: 'Mai Shiranui',
+        image: 'otherHeroes/Mai_Shiranui-circle.webp',
+        severity: 'high',
+        reason: 'gee I wonder.'
+      },
+      {
+        hero: 'Han Xin',
+        image: 'otherHeroes/Han_Xin-circle.webp',
+        severity: 'medium',
+        reason: 'Also disgunting amount of mobility and damage, but he is waaaay more manageable.'
+      },
+      {
+        hero: 'Dian Wei',
+        image: 'otherHeroes/Dian_Wei-circle.webp',
+        severity: 'medium',
+        reason: 'He has a lot of chase potential with his passive, so kinda annoying.'
+      },
+      {
+        hero: 'Shangguan',
+        image: 'otherHeroes/Shangguan-circle.webp',
+        severity: 'medium',
+        reason: 'Also disgunting amount of mobility and damage, but if she does not get strong early you win.'
+      },
+      {
+        hero: 'Allain',
+        image: 'otherHeroes/Allain-circle.webp',
+        severity: 'medium',
+        reason: 'disgunting amount of mobility and damage (waow), but surprisingly playable (idk why it just kinda is).'
+      },
+      {
+        hero: 'Dharma',
+        image: 'otherHeroes/Dharma-circle.webp',
+        severity: 'medium',
+        reason: 'Big burst and stun, if you do the build I recommended he will not kill you though (if he is not doing full damage).'
+      },
+      {
+        hero: 'Lian Po',
+        image: 'otherHeroes/Lian_Po-circle.webp',
+        severity: 'medium',
+        reason: 'A lot of cc and cc immunity, be far away and he will not do much though.'
+      },
+      {
+        hero: 'Zhang Fei',
+        image: 'otherHeroes/Zhang_Fei-circle.webp',
+        severity: 'low',
+        reason: 'A Zhang Fei that can initiate is tough, but those are rare'
+      },
+      {
+        hero: 'Guiguzi',
+        image: 'otherHeroes/Guiguzi-circle.webp',
+        severity: 'low',
+        reason: 'Annoying CC and surprisingly high damage, super rare to find though'
+      },
     ],
 
-    explanation: `
-    DON'T PICK LUBAN NO.7 INTO LUNA PLSSS. This matchup is actual hell, she can close in on you very fast and her dashes will cause you to miss your enhanced autos and S2. I strongly recommend to ban her to avoid that nonsense, as she is the only one here where the matchup feels like torture. If you somehow found yourself in this situation, try your best not feed her too much and try to bring the game to late game. At late game she is much more manageable, as you will start outhealing her damage, especially if you position yourself well and have bought <span data-item="succubus-cloak" class="item-link magical-def">Succubus Cloak</span>. (which is a must to buy btw, try to get it on your forth item).
+    explanation: `These are the major threats, anything else is slightly annoying but playable. Those four at the top though are the biggest concerns. For Feyd and Jing, build <span class="item-link physical-def" data-item="ominous-premonition">Ominous Premonition</span> and for Luna and Mai you should build <span class="item-link magical-def" data-item="succubus-cloak">Succubus Cloak</span>, preferably as the fourth item.
     `
-  }
-} 
+  },
+}
+
 
 const matchupExplanation = document.querySelector('.matchup-explanation');
 
