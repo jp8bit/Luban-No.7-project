@@ -425,36 +425,50 @@ const arcana = {
 const tooltip = document.querySelector('.tooltip');
 const arcanaTooltip = document.querySelector('.arcana-tooltip');
 
-document.querySelectorAll('.item-link').forEach((link) => {
-    link.addEventListener('mouseover', showTooltip);
-    link.addEventListener('mouseout', hideTooltip);
+// Event delegation for dynamically created content
+document.addEventListener('mouseover', function(event) {
+    const itemLink = event.target.closest('.item-link');
+    if (itemLink) {
+        showTooltip(event, itemLink);
+        return;
+    }
+    
+    const arcanaLink = event.target.closest('.arcana-link');
+    if (arcanaLink) {
+        showArcanaTooltip(event, arcanaLink);
+        return;
+    }
 });
 
-document.querySelectorAll('.arcana-link').forEach((link) => {
-    link.addEventListener('mouseover', showArcanaTooltip);
-    link.addEventListener('mouseout', hideArcanaTooltip)
-})
+document.addEventListener('mouseout', function(event) {
+    if (event.target.closest('.item-link')) {
+        hideTooltip();
+    }
+    
+    if (event.target.closest('.arcana-link')) {
+        hideArcanaTooltip();
+    }
+});
 
-function showTooltip(event) {
-    const itemId = event.target.getAttribute('data-item');
+function showTooltip(event, element) {
+    const itemId = element.getAttribute('data-item');
     const item = items[itemId];
 
-    if (!item) return;
-
-   const effectsHTML = item.effects.map(effect => {
-    if (effect.parts) {
-        // For multi-colored text
-        const partsHTML = effect.parts.map(part => 
-            `<span class="${part.type}">${part.text}</span>`
-        ).join('');
-        return `<div class="tooltip-effect">${partsHTML}</div>`;
-    } else {
-        // For single-colored text (backwards compatible)
-        return `<div class="tooltip-effect ${effect.type}">${effect.text}</div>`;
+    if (!item) {
+        console.log('Item not found:', itemId);
+        return;
     }
-  
-}).join('');
 
+    const effectsHTML = item.effects.map(effect => {
+        if (effect.parts) {
+            const partsHTML = effect.parts.map(part => 
+                `<span class="${part.type}">${part.text}</span>`
+            ).join('');
+            return `<div class="tooltip-effect">${partsHTML}</div>`;
+        } else {
+            return `<div class="tooltip-effect ${effect.type}">${effect.text}</div>`;
+        }
+    }).join('');
 
     tooltip.innerHTML = `
       <div class="tooltip-header">
@@ -467,54 +481,52 @@ function showTooltip(event) {
      ${effectsHTML}
     `;
 
-    // Show the tooltip
     tooltip.style.display = 'block';
-    
-    // Position directly above the item that was hovered
-    positionTooltip(event.target, tooltip);
+    positionTooltip(element, tooltip);
 }
 
 function hideTooltip() {
     tooltip.style.display = 'none';
 }
 
-function showArcanaTooltip (event) {
-    const arcanaId = event.target.getAttribute('data-arcana');
+function showArcanaTooltip(event, element) {
+    const arcanaId = element.getAttribute('data-arcana');
     const arcanaData = arcana[arcanaId];
 
-    if (!arcanaData) return;
+    if (!arcanaData) {
+        console.log('Arcana not found:', arcanaId);
+        return;
+    }
 
     const effectsHTML = arcanaData.effects.map(effect =>
-       `<div class="tooltip-effect ${effect.type}">${effect.text}</div>`
-  ).join('');
+        `<div class="tooltip-effect ${effect.type}">${effect.text}</div>`
+    ).join('');
 
-  arcanaTooltip.innerHTML = `
+    arcanaTooltip.innerHTML = `
      <div class="tooltip-header-arcana">
         <img src="${arcanaData.image}" alt="${arcanaData.name}" class="tooltip-img">
         <div class="tooltip-name">${arcanaData.name}</div>
     </div>
     ${effectsHTML}
-  `;
+    `;
 
-  arcanaTooltip.style.display = 'block';
-  positionTooltip(event.target, arcanaTooltip);
+    arcanaTooltip.style.display = 'block';
+    positionTooltip(element, arcanaTooltip);
 }
 
 function hideArcanaTooltip() {
-    arcanaTooltip.style.display = 'none'
+    arcanaTooltip.style.display = 'none';
 }
 
-// FIXED: Use tooltipElement parameter instead of hardcoded tooltip variable
 function positionTooltip(element, tooltipElement) {
     const rect = element.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
     
-    // Center above the element
     const x = rect.left + scrollLeft + (rect.width / 2);
-    const y = rect.top + scrollTop - tooltipElement.offsetHeight - 10; // 10px gap above
+    const y = rect.top + scrollTop - tooltipElement.offsetHeight - 10;
     
     tooltipElement.style.left = x + 'px';
     tooltipElement.style.top = y + 'px';
-    tooltipElement.style.transform = 'translateX(-50%)'; // This centers it
+    tooltipElement.style.transform = 'translateX(-50%)';
 }
