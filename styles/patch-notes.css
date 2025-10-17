@@ -1,0 +1,455 @@
+@charset "UTF-8";
+  
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+Fade in from left animation
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-150px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+*/
+
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #24252A;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+li, a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500px;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 10px;
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-links li a {
+  transition: all 500ms ease 0s;
+}
+
+.nav-links li a:hover {
+  color: #33d0ac;
+}
+
+
+.divider {
+  position: absolute;
+  margin-bottom: 16px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #bc6ef0
+}
+
+.container {
+  max-width: 1450px; /* The maximum width your content will grow to */
+  margin: 0 auto;    /* "0" for top/bottom, "auto" for left/right (centers it) */
+  padding: 0 1rem;   /* "0" for top/bottom, "1rem" for left/right */
+}
+
+.luban-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.luban-splash {
+  width: 100%;
+  max-height: 734px;
+  font-size: 18px;
+  line-height: 1.5;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 500ms ease-in-out forwards;
+}
+
+/* This add the fade at the bottom (huge btw)*/
+.luban-banner::after { 
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%; /* Adjust this to control how much of the image fades */
+  background: linear-gradient(to top, #2b2c30 0%, transparent 100%);
+  pointer-events: none; /* This ensures clicks pass through to the image */
+}
+
+.text-overlay {
+  text-align: center;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  margin-top: 22em;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.236);
+  text-shadow: 0px 0px 10em rgb(0, 0, 0, 0.456);
+}
+
+.text-overlay h1 {
+  font-size: 68px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+.text-overlay p {
+  font-size: 48px;
+  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.271);
+  font-weight: bold;
+}
+
+.cat-throw {
+  position: absolute;
+  width: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 90px;
+}
+
+.bongo-cat {
+  max-width: 50px;
+  max-height: 50px;
+  position: absolue;
+  margin-left: 20px;
+}
+
+
+p {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.9em;
+  margin-bottom: 15px;
+}
+
+.patch-notes-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.patch-notes {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  background: rgba(30, 30, 35, 0.95);
+  border-radius: 16px;
+  border: 2px solid #bc6ef0;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(188, 110, 240, 0.2);
+}
+
+/* Sidebar Styles */
+.side-bar {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.luban-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 3px solid #a8f888;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  border-left: 4px solid #a8f888;
+}
+
+.stat-label {
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #a8f888;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Patch Content Styles */
+.patch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.patch-header h2 {
+  color: #bc6ef0;
+  font-size: 28px;
+  margin: 0;
+}
+
+.patch-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.patch-btn {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.patch-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.patch-btn.active {
+  background: rgba(188, 110, 240, 0.2);
+  border-color: #bc6ef0;
+  color: #bc6ef0;
+}
+
+/* Patch Details Styles */
+.patch-version {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  border-left: 6px solid;
+  position: relative;
+}
+
+.patch-version.nerf {
+  border-left-color: #ff6b6b;
+}
+
+.patch-version.buff {
+  border-left-color: #6bcf7f;
+}
+
+.patch-version.adjustment {
+  border-left-color: #ffb347;
+}
+
+.patch-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nerf .patch-badge {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+.buff .patch-badge {
+  background: #6bcf7f;
+  color: #fff;
+}
+
+.adjustment .patch-badge {
+  background: #ffb347;
+  color: #333;
+}
+
+.patch-version h3 {
+  color: #fff;
+  margin: 0 0 20px 0;
+  font-size: 22px;
+}
+
+.changes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.change-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+.change-skill {
+  color: #a8f888;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 150px;
+}
+
+.change-desc {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.change-desc.nerf {
+  color: #ff6b6b;
+}
+
+.change-desc.buff {
+  color: #6bcf7f;
+}
+
+.change-desc.adjustment {
+  color: #ffb347;
+}
+
+.patch-comment {
+  color: #ccc;
+  font-style: italic;
+  margin: 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #bc6ef0;
+}
+
+.hero-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+.select-hero {
+  margin-top: 50px;
+  font-size: 69px; /* lol */
+  font-weight: bold;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
+  border-top: 3px solid #bc6ef0;
+}
+
+.hero-selector img {
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+.new-release {
+  background-color: rgb(243, 94, 94);
+  position: absolute;
+  color: rgb(255, 255, 255);
+  padding: 5px 20px;
+  font-size: 30px;
+  border-radius: 50px;
+  font-weight: 800;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -125px;
+  margin-left: 7.3em;
+  font-style: italic;
+}
+
+.hero-name {
+  margin-top: 30px;
+  font-size: 39px;
+  font-weight: normal;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
+  margin-bottom: 20px;
+  color: white
+  ;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .patch-notes {
+    grid-template-columns: 1fr;
+  }
+  
+  .patch-header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .patch-selector {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .change-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .change-skill {
+    min-width: auto;
+  }
+  
+  .patch-selector {
+    flex-wrap: wrap;
+  }
+}
