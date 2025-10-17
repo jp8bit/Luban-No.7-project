@@ -1,121 +1,87 @@
-class CarouselSlider {
-    constructor() {
-        this.carousel = document.querySelector('.carousel');
-        this.slides = document.querySelectorAll('.slide');
-        this.dots = document.querySelectorAll('.dot');
-        this.prevBtn = document.querySelector('.prev-btn');
-        this.nextBtn = document.querySelector('.next-btn');
-        this.currentIndex = 1; // Start with middle slide as active
-        this.slideWidth = this.slides[0].offsetWidth + 20; // Include gap
-        
-        this.init();
-        this.updateCarousel();
-    }
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Carousel elements
+    const carousel = document.querySelector('.carousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.carousel-dots');
     
-    init() {
-        this.prevBtn.addEventListener('click', () => this.prevSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
-        
-        this.dots.forEach(dot => {
-            dot.addEventListener('click', (e) => {
-                const slideIndex = parseInt(e.target.dataset.slide);
-                this.goToSlide(slideIndex);
-            });
+    // State variables
+    let currentSlide = 0;
+    let slideInterval;
+    const intervalTime = 5000; // 5 seconds
+    
+    // Initialize dots
+    function initDots() {
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
         });
-        
-        // Clone slides for infinite effect
-        this.setupInfiniteSlides();
     }
     
-    setupInfiniteSlides() {
-        // Clone first and last slides for seamless looping
-        const firstClone = this.slides[0].cloneNode(true);
-        const lastClone = this.slides[this.slides.length - 1].cloneNode(true);
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        // Remove active class from current slide and dot
+        slides[currentSlide].classList.remove('active');
+        dotsContainer.children[currentSlide].classList.remove('active');
         
-        this.carousel.appendChild(firstClone);
-        this.carousel.insertBefore(lastClone, this.slides[0]);
+        // Update current slide
+        currentSlide = slideIndex;
         
-        // Update slides reference
-        this.slides = document.querySelectorAll('.slide');
+        // Add active class to new slide and dot
+        slides[currentSlide].classList.add('active');
+        dotsContainer.children[currentSlide].classList.add('active');
+        
+        // Reset auto slide timer
+        resetInterval();
     }
     
-    updateCarousel() {
-        // Update active states
-        this.slides.forEach((slide, index) => {
-            slide.classList.remove('active');
-            
-            // Set middle slide as active in the visible area
-            if (index === this.currentIndex) {
-                slide.classList.add('active');
-            }
-        });
-        
-        // Update dots
-        this.dots.forEach((dot, index) => {
-            dot.classList.remove('active');
-            if (index === this.getRealIndex()) {
-                dot.classList.add('active');
-            }
-        });
-        
-        // Calculate transform position
-        const transformX = -this.currentIndex * this.slideWidth;
-        this.carousel.style.transform = `translateX(${transformX}px)`;
+    // Next slide
+    function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        goToSlide(nextIndex);
     }
     
-    nextSlide() {
-        this.currentIndex++;
-        
-        // Check if we've reached the cloned slide
-        if (this.currentIndex >= this.slides.length - 1) {
-            setTimeout(() => {
-                this.carousel.style.transition = 'none';
-                this.currentIndex = 1;
-                this.updateCarousel();
-                
-                // Force reflow
-                this.carousel.offsetHeight;
-                
-                this.carousel.style.transition = 'transform 0.5s ease-in-out';
-            }, 500);
-        }
-        
-        this.updateCarousel();
+    // Previous slide
+    function prevSlide() {
+        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        goToSlide(prevIndex);
     }
     
-    prevSlide() {
-        this.currentIndex--;
-        
-        // Check if we've reached the cloned slide
-        if (this.currentIndex <= 0) {
-            setTimeout(() => {
-                this.carousel.style.transition = 'none';
-                this.currentIndex = this.slides.length - 2;
-                this.updateCarousel();
-                
-                // Force reflow
-                this.carousel.offsetHeight;
-                
-                this.carousel.style.transition = 'transform 0.5s ease-in-out';
-            }, 500);
-        }
-        
-        this.updateCarousel();
+    // Auto slide
+    function startInterval() {
+        slideInterval = setInterval(nextSlide, intervalTime);
     }
     
-    goToSlide(index) {
-        this.currentIndex = index + 1; // Adjust for cloned slides
-        this.updateCarousel();
+    // Reset interval
+    function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
     }
     
-    getRealIndex() {
-        // Convert carousel index to real slide index
-        if (this.currentIndex === 0) return this.slides.length - 3;
-        if (this.currentIndex === this.slides.length - 1) return 0;
-        return this.currentIndex - 1;
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    new CarouselSlider();
+    // Event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Pause auto slide on hover
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+    
+    // Resume auto slide when mouse leaves
+    carousel.addEventListener('mouseleave', startInterval);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // Initialize
+    initDots();
+    startInterval();
 });
