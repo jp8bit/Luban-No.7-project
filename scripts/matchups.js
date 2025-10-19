@@ -241,7 +241,7 @@ const generalThreats = {
       },
     ],
 
-    explanation: `These are the major threats, anything else is slightly annoying but playable. Those four at the top though are the biggest concerns. For Feyd and Jing, build <span class="item-link physical-def" data-item="ominous-premonition">Ominous Premonition</span> and for Luna and Mai you should build <span class="item-link magical-def" data-item="succubus-cloak">Succubus Cloak</span>, preferably as the fourth item.
+    explanation: `These are the major threats, anything else is slightly annoying but playable. Those four at the top though are the biggest concerns. For Feyd and Jing, build <span class="item-link physical-def" data-item="ominous-premonition">Ominous Premonition</span> and for Luna and Mai you should build <span class="item-link magical-def" data-item="succubus-cloak">Succubus Cloak</span>, preferably as the fourth item. Still though, preferably wait for the enemy team to have picked <strong>at least</strong> mid or jungle before you pick Luban No.7, as those have the most threats. Luna should be your first ban priority, because while I do think Jing is the harder matchup, it is super rare to find an actually good Jing, as opposed to Luna which is wayyyy more common to find a good one.
     `
   },
 }

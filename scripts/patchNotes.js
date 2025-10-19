@@ -2,7 +2,7 @@
 const patchData = {
   'march-2024': {
     type: 'nerf',
-    version: 'Season 4 - June 2024',
+    version: 'Season 4 - March 2024',
     changes: [
       { skill: 'Passive - Suppresive Fire', type: 'nerf', desc: "Base damage reduced from 7% of target's max health to 6% of target's max health" },
       { skill: 'Ultimate - Aerial Support', type: 'nerf', desc: 'Cooldown increased from 30 seconds to 35 seconds' }
