@@ -1,0 +1,380 @@
+/* ===== MEDIA QUERIES ===== */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .hero-selector img {
+    max-width: 500px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .header-container {
+    padding: 3px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .divider {
+    display: none;
+  }
+  
+  .logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+  
+  .nav-links {
+    padding: 10px 0;
+  }
+  
+  .nav-links li {
+    padding: 0px 15px;
+  }
+  
+  .luban-banner {
+    max-height: 600px;
+  }
+  
+  .text-overlay {
+    top: 75%;
+  }
+  
+  .introduction-section p {
+    font-size: 22px;
+  }
+  
+  .hero-selector img {
+    max-width: 400px;
+  }
+  
+  .select-hero {
+    font-size: 50px;
+  }
+  
+  .hero-name {
+    font-size: 32px;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 720px;
+    padding: 0 1.5rem;
+  }
+  
+  .header-container {
+    padding: 10px 15px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .nav-links li {
+    display: block;
+    padding: 8px 0;
+  }
+  
+  .nav-links li a {
+    font-size: 18px;
+  }
+  
+  .luban-banner {
+    height: 70vh;
+    min-height: 350px;
+    max-height: 500px;
+  }
+  
+  .text-overlay {
+    top: 70%;
+    padding: 15px;
+  }
+  
+  .text-overlay h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .introduction-section h2 {
+    font-size: 1.5rem;
+    margin-top: 25px;
+  }
+  
+  .introduction-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 15px;
+  }
+  
+  .winrates-container-luban img,
+  .actual-winrate-container img {
+    max-width: 150px;
+  }
+  
+  .btn-section {
+    gap: 15px;
+    margin: 30px auto;
+  }
+  
+  .link-btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 25px;
+  }
+  
+  .cat-container img {
+    max-width: 150px;
+  }
+  
+  .hero-selector img {
+    max-width: 300px;
+  }
+  
+  .select-hero {
+    font-size: 40px;
+  }
+  
+  .hero-name {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+  
+  .new-release {
+    margin-top: -15px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .header-container {
+    padding: 8px 10px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0px;
+  }
+  
+  .nav-links li {
+    padding: 6px 0;
+  }
+  
+  .nav-links li a {
+    font-size: 20px;
+  }
+
+  .nav-links li a:hover {
+    background-color: rgb(65, 64, 64);
+    padding: 0px 30px;
+  }
+  
+  .divider {
+    height: 1px;
+    display: none;
+  }
+  
+  .luban-banner {
+    height: 60vh;
+    min-height: 300px;
+    max-height: 400px;
+  }
+  
+  .text-overlay {
+    top: 65%;
+    padding: 10px;
+  }
+  
+  .text-overlay h1 {
+    margin-top: 8rem;
+  }
+  
+  .text-overlay p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .introduction-section h2 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+  
+  .introduction-section h2::before {
+    width: 30px;
+    height: 15px;
+    margin-right: 8px;
+  }
+  
+  .introduction-section p {
+    font-size: 19px;
+    line-height: 1.5;
+    margin-top: 12px;
+  }
+  
+  .winrates-container-luban img,
+  .actual-winrate-container img {
+    max-width: 120px;
+  }
+  
+  .actual-winrate-container {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .btn-section {
+    gap: 12px;
+    margin: 25px auto;
+  }
+  
+  .link-btn {
+    width: 100%;
+    max-width: 220px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .cat-container {
+    margin: 30px 0;
+  }
+  
+  .cat-container img {
+    max-width: 120px;
+  }
+  
+  .cat-boom {
+    max-width: 40px;
+    max-height: 40px;
+    margin-left: 10px;
+  }
+  
+  .hero-selector img {
+    max-width: 250px;
+  }
+  
+  .select-hero {
+    font-size: 32px;
+  }
+  
+  .hero-name {
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .new-release {
+    font-size: 16px;
+    margin-top: -10px;
+  }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 399.98px) {
+  .nav-links li a {
+    font-size: 14px;
+  }
+  
+  .luban-banner {
+    height: 50vh;
+    min-height: 250px;
+  }
+  
+  .text-overlay {
+    top: 60%;
+  }
+  
+  .introduction-section h2 {
+    font-size: 1.2rem;
+  }
+  
+  .introduction-section p {
+    font-size: 15px;
+  }
+  
+  .winrates-container-luban img,
+  .actual-winrate-container img {
+    max-width: 100px;
+  }
+  
+  .link-btn {
+    max-width: 200px;
+    padding: 8px 16px;
+  }
+  
+  .hero-selector img {
+    max-width: 200px;
+  }
+  
+  .select-hero {
+    font-size: 28px;
+  }
+  
+  .hero-name {
+    font-size: 20px;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .luban-banner {
+    height: 100vh;
+    min-height: 300px;
+  }
+  
+  .text-overlay {
+    top: 50%;
+  }
+  
+  .text-overlay h1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .text-overlay p {
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* High-resolution displays */
+@media (min-resolution: 192dpi) {
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header-container,
+  .luban-banner,
+  .btn-section,
+  .cat-container,
+  .hero-selector {
+    display: none;
+  }
+  
+  body {
+    background-color: white;
+    color: black;
+    font-size: 12pt;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -66,6 +66,8 @@ li, a {
 
 .nav-links li a:hover {
   color: #33d0ac;
+  background-color: rgb(65, 64, 64);
+  padding: 0px 30px;
 }
 
 
@@ -87,17 +89,19 @@ li, a {
 
 .luban-banner {
   position: relative;
-  overflow: hidden;
+  height: 100vh; /* Fixed viewport height */
+  min-height: 400px;
+  max-height: 700px;
+  background-image: url('../images/luban_test_basic.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .luban-splash {
-  width: 100%;
-  height: auto;
-  font-size: 18px;
-  line-height: 1.5;
-  object-fit: cover;
-  opacity: 0;
-  animation: fadeIn 500ms ease-in-out forwards;
+  display: none;
 }
 
 /* This add the fade at the bottom (huge btw)*/
@@ -116,28 +120,29 @@ li, a {
 .text-overlay {
   text-align: center;
   color: white;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  top: 50%;
+  top: 80%; /* Always center vertically */
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  margin-top: 20em;
+  transform: translate(-50%, -50%); /* True center */
+  z-index: 2;
+  width: 90%; /* Prevent overflow */
+  padding: 20px;
 }
 
 .text-overlay h1 {
-  font-size: 68px;
-  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.271);
+  font-size: clamp(2rem, 8vw, 4.25rem);
+  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.8);
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  line-height: 1.2;
 }
 
-
 .text-overlay p {
-  font-size: 48px;
-  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.271);
+  font-size: clamp(1.2rem, 4vw, 3rem);
+  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.8);
   font-weight: bold;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  line-height: 1.3;
 }
 
 .introduction-section h2 {
@@ -178,7 +183,8 @@ li, a {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .winrates-container-luban img {
@@ -186,11 +192,18 @@ li, a {
 }
 
 .winrates-container-luban::after {
-  content: "<------  I'm goated";
-  margin-left: 24em;
-  font-size: 25px;
+  content: "I'm goated 🐐";
+  font-size: clamp(16px, 4vw, 25px);
   font-weight: 450;
-  position: absolute;
+  order: 1;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.winrates-container-luban::after {
+  position: static !important;
+  margin-left: 0 !important;
 }
 
 .cat-boom {
@@ -203,6 +216,7 @@ li, a {
 .actual-winrate-container {
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
 }
 
 .actual-winrate-container img {
@@ -217,58 +231,56 @@ li, a {
 
 .btn-section {
   display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
-  gap: 50px
+  justify-content: center; /* Center the buttons */
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px auto; /* Center the entire section */
+  max-width: 1200px; /* Prevent stretching too wide */
+  position: relative; /* For proper stacking context */
 }
-
-
 
 .link-btn {
   background-color: #24252A;
   color: white;
-  border: 2px solid transparent;
-  padding: 30px 60px;
+  border: 2px solid rgb(107, 156, 248);
+  padding: clamp(15px, 3vw, 30px) clamp(30px, 6vw, 60px);
   border-radius: 10px;
   font-family: 'Segoe UI', system-ui, sans-serif;
   font-weight: 600;
-  font-size: 24px;
+  font-size: clamp(16px, 3vw, 24px);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  margin-top: 20px;
-  margin-right: 100px;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.251);
-  border: 2px solid rgb(107, 156, 248);
-  width: 300px;
+  width: 280px; /* Fixed width for consistency */
+  margin: 0; /* Remove individual margins */
+  text-align: center;
+  text-decoration: none; /* If using <a> tags */
+  display: flex; /* For better centering */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Hover effects */
+.link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(107, 156, 248, 0.3);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+/* Make sure anchor tags don't have extra styles */
+.btn-section a {
+  text-decoration: none;
+  display: block; /* Each button on its own line in flex context */
 }
 
 .match-btn, .patch-btn {
   margin-right: 0px;
 }
 
-.link-btn::before,
-.link-btn::after {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: #24252A;
-}
-
-.link-btn::before {
-  top: 0;
-  left: 0;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
-
-.link-btn::after {
-  bottom: 0;
-  right: 0;
-  clip-path: polygon(100% 100%, 0 100%, 100% 0);
-}
 
 /* Hover effects */
 .link-btn:hover {
@@ -291,14 +303,16 @@ li, a {
 }
 
 .cat-container {
-  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin: 40px 0;
+  position: relative;
+  z-index: 1; /* Ensure it's above background but below buttons */
 }
 
 .cat-container img {
-  margin-top: -130px;
+  max-width: min(200px, 30vw);
+  height: auto;
 }
 
 .hero-selector {
@@ -310,11 +324,10 @@ li, a {
 }
 
 .select-hero {
-  margin-top: 50px;
   font-size: 69px; /* lol */
   font-weight: bold;
   text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
-  border-top: 3px solid #FFA500;
+  border-top: 4px solid #FFA500;
 }
 
 .hero-selector img {
@@ -324,18 +337,17 @@ li, a {
 
 .new-release {
   background-color: rgb(243, 94, 94);
-  position: absolute;
   color: rgb(255, 255, 255);
-  padding: 5px 20px;
-  font-size: 30px;
+  padding: clamp(3px, 1vw, 5px) clamp(12px, 3vw, 20px);
+  font-size: clamp(14px, 3vw, 30px);
   border-radius: 50px;
   font-weight: 800;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: -125px;
-  margin-left: 7.3em;
   font-style: italic;
+  margin-top: -20px; /* Adjust based on your layout */
+  z-index: 2;
+  /* Remove absolute positioning */
+  position: static;
+  margin-left: 0;
 }
 
 .hero-name {
