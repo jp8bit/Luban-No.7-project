@@ -1,5 +1,5 @@
 # Luban-No.7-project
-<h2>A detailed guide on how to play Luban No.7 on the MOBA game Honor of Kings!<h2>
+<h2>A detailed guide on how to play Luban No.7 on the MOBA game Honor of Kings!</h2>
 
 ACCESS IT HERE!!! --> <a href="https://jp8bit.github.io/Luban-No.7-project/index.html">Todo List</a>
 
