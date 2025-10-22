@@ -1,7 +1,7 @@
 # Luban-No.7-project
 <h2>A detailed guide on how to play Luban No.7 on the MOBA game Honor of Kings!</h2>
 
-ACCESS IT HERE!!! --> <a href="https://jp8bit.github.io/Luban-No.7-project/index.html">Todo List</a>
+ACCESS IT HERE!!! --> <a href="https://jp8bit.github.io/Luban-No.7-project/index.html">Xeniel's Codex</a>
 
 <p>Admiteddly, after doing the todo list and weather app (which is finished, i just haven't been able to release it yet due to api key leaks and stuff), i got a tad bit burnt out. They both just felt so corporate and like, soulless. I tried adding some character and charm with the visuals but i just wasnt interested in what I was doing.</p>
 
