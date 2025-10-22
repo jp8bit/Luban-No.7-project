@@ -1,0 +1,161 @@
+/* ===== MEDIA QUERIES FOR GUIDE PAGE ===== */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .video-skills video, .video-tips video {
+    width: 700px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .video-skills video, .video-tips video {
+    width: 600px;
+  }
+  
+  .tips-section h1, 
+  .combo-section h1, 
+  .game-progression h1 {
+    font-size: 35px;
+  }
+  
+  .tips-section p, 
+  .combo-section p, 
+  .game-progression p,
+  ol > li {
+    font-size: 22px;
+    line-height: 1.7em;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .video-skills video, .video-tips video {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .tips-section h1, 
+  .combo-section h1, 
+  .game-progression h1 {
+    font-size: 30px;
+    margin-top: 15px;
+  }
+  
+  .tips-section p, 
+  .combo-section p, 
+  .game-progression p,
+  ol > li {
+    font-size: 18px;
+    line-height: 1.6em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  ol > li {
+    margin-left: 15px;
+  }
+  
+  .combo-section h2,
+  .game-progression h2 {
+    font-size: 1.5rem;
+  }
+  
+  .combo-section h2::before,
+  .game-progression h2::before {
+    width: 30px;
+    height: 15px;
+    margin-right: 8px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .video-skills video, .video-tips video {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .tips-section h1, 
+  .combo-section h1, 
+  .game-progression h1 {
+    font-size: 26px;
+    margin-top: 12px;
+    gap: 8px;
+  }
+  
+  .tips-section p, 
+  .combo-section p, 
+  .game-progression p,
+  ol > li {
+    font-size: 18.8px;
+    line-height: 1.5em;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+  
+  ol > li {
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .combo-section h2,
+  .game-progression h2 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+  
+  .combo-section h2::before,
+  .game-progression h2::before {
+    width: 25px;
+    height: 12px;
+    margin-right: 6px;
+  }
+  
+  /* Adjust the inline cat gif */
+  .tips-section p img {
+    max-width: 30px !important;
+    max-height: 30px !important;
+    margin-left: 3px !important;
+  }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 399.98px) {
+  .video-skills video, .video-tips video {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .tips-section h1, 
+  .combo-section h1, 
+  .game-progression h1 {
+    font-size: 22px;
+  }
+  
+  .tips-section p, 
+  .combo-section p, 
+  .game-progression p,
+  ol > li {
+    font-size: 15px;
+  }
+  
+  .combo-section h2,
+  .game-progression h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .video-skills video, .video-tips video {
+    max-width: 300px;
+  }
+  
+  .tips-section p, 
+  .combo-section p, 
+  .game-progression p {
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+}

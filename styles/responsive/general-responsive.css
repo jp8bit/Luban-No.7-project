@@ -1,7 +1,7 @@
 /* ===== MEDIA QUERIES ===== */
 
 /* Large devices (desktops, less than 1200px) */
-@media (max-width: 1200px) {
+@media (max-width: 1199.98px) {
   .container {
     max-width: 1140px;
   }
@@ -11,7 +11,6 @@
   }
 }
 
-/* Medium devices (tablets, less than 992px) */
 @media (max-width: 992px) {
   .container {
     max-width: 960px;
@@ -31,6 +30,7 @@
     width: 120px;
     height: 120px;
     margin-bottom: 10px;
+    border-bottom: 3px solid rgb(143, 244, 182);
   }
   
   .nav-links {
@@ -66,7 +66,6 @@
   }
 }
 
-/* Small devices (landscape phones, less than 768px) */
 @media (max-width: 768px) {
   .container {
     max-width: 720px;
@@ -116,27 +115,7 @@
     line-height: 1.6;
     margin-top: 15px;
   }
-  
-  .winrates-container-luban img,
-  .actual-winrate-container img {
-    max-width: 150px;
-  }
-  
-  .btn-section {
-    gap: 15px;
-    margin: 30px auto;
-  }
-  
-  .link-btn {
-    width: 100%;
-    max-width: 250px;
-    padding: 12px 25px;
-  }
-  
-  .cat-container img {
-    max-width: 150px;
-  }
-  
+
   .hero-selector img {
     max-width: 300px;
   }
@@ -155,7 +134,6 @@
   }
 }
 
-/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 576px) {
   .container {
     max-width: 100%;
@@ -202,7 +180,7 @@
   }
   
   .text-overlay h1 {
-    margin-top: 8rem;
+    margin-top: 11rem;
   }
   
   .text-overlay p {
@@ -225,43 +203,7 @@
     line-height: 1.5;
     margin-top: 12px;
   }
-  
-  .winrates-container-luban img,
-  .actual-winrate-container img {
-    max-width: 120px;
-  }
-  
-  .actual-winrate-container {
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .btn-section {
-    gap: 12px;
-    margin: 25px auto;
-  }
-  
-  .link-btn {
-    width: 100%;
-    max-width: 220px;
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  
-  .cat-container {
-    margin: 30px 0;
-  }
-  
-  .cat-container img {
-    max-width: 120px;
-  }
-  
-  .cat-boom {
-    max-width: 40px;
-    max-height: 40px;
-    margin-left: 10px;
-  }
-  
+
   .hero-selector img {
     max-width: 250px;
   }
@@ -282,7 +224,6 @@
   }
 }
 
-/* Very small devices (less than 400px) */
 @media (max-width: 400px) {
   .nav-links li a {
     font-size: 14px;
@@ -304,18 +245,8 @@
   .introduction-section p {
     font-size: 15px;
   }
-  
-  .winrates-container-luban img,
-  .actual-winrate-container img {
-    max-width: 100px;
-  }
-  
-  .link-btn {
-    max-width: 200px;
-    padding: 8px 16px;
-  }
-  
-  .hero-selector img {
+
+    .hero-selector img {
     max-width: 200px;
   }
   
