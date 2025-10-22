@@ -6,19 +6,20 @@
 }
 
 .tooltip, .arcana-tooltip {
-    position: absolute;
-    background: #242524;
-    border: 1.5px solid #a7ecc9;
-    border-radius: 8px;
-    padding: 10px;
-    max-width: 250px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 1000;
-    display: none;
-    /* Add these to ensure proper positioning */
-    transform: translateX(-50%);
-    left: 0;
-    top: 0;
+  position: absolute;
+  background: #242524;
+  border: 1.5px solid #a7ecc9;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: none;
+  transform: none;
+  left: 0;
+  top: 0;
+  max-width: min(250px, 90vw); 
+  word-wrap: break-word;
 }
 
 .tooltip-header {
@@ -69,7 +70,7 @@
     clear: both;
     margin-top: 15px;
     font-size: 14px;
-    color: #333; /* Make sure text is visible */
+    color: #333;
 }
 
 .positive { color: rgb(156, 236, 156); }

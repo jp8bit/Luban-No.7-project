@@ -1,0 +1,158 @@
+/* ===== MEDIA QUERIES FOR TOOLTIPS ===== */
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .tooltip, .arcana-tooltip {
+    max-width: min(220px, 85vw);
+    padding: 8px;
+  }
+  
+  .tooltip-img {
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+  }
+  
+  .arcana-tooltip img {
+    margin-left: 20px;
+  }
+  
+  .tooltip-effect {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+  
+  .tooltip-header {
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .tooltip, .arcana-tooltip {
+    max-width: min(200px, 80vw);
+    padding: 8px;
+  }
+  
+  .tooltip-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+  
+  .arcana-tooltip img {
+    margin-left: 15px;
+    margin-bottom: 4px;
+  }
+  
+  .tooltip-effect {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .tooltip-header {
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .tooltip-name {
+    font-size: 14px;
+  }
+  
+  .tooltip-cost {
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .tooltip, .arcana-tooltip {
+    max-width: min(180px, 75vw);
+    padding: 6px;
+    border-width: 1px;
+  }
+  
+  .tooltip-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+  }
+  
+  .arcana-tooltip img {
+    margin-left: 12px;
+    margin-bottom: 3px;
+  }
+  
+  .tooltip-effect {
+    margin-top: 8px;
+    font-size: 11px;
+  }
+  
+  .tooltip-header {
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+  
+  .tooltip-name {
+    font-size: 13px;
+  }
+  
+  .tooltip-cost {
+    font-size: 12px;
+  }
+  
+  .tooltip-header-arcana {
+    gap: 2px;
+  }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 399.98px) {
+  .tooltip, .arcana-tooltip {
+    max-width: min(160px, 70vw);
+    padding: 5px;
+  }
+  
+  .tooltip-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .arcana-tooltip img {
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+  
+  .tooltip-effect {
+    margin-top: 6px;
+    font-size: 10px;
+  }
+  
+  .tooltip-name {
+    font-size: 12px;
+  }
+  
+  .tooltip-cost {
+    font-size: 11px;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .tooltip, .arcana-tooltip {
+    max-width: min(200px, 60vw);
+    padding: 6px;
+  }
+  
+  .tooltip-img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .tooltip-effect {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+}

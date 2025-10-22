@@ -1,0 +1,357 @@
+/* ===== MEDIA QUERIES FOR PATCH NOTES PAGE ===== */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .patch-notes-container {
+    max-width: 1100px;
+    margin: 35px auto;
+  }
+  
+  .patch-notes {
+    grid-template-columns: 280px 1fr;
+    gap: 25px;
+    padding: 25px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .patch-notes-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  
+  .patch-notes {
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .side-bar {
+    padding: 20px;
+  }
+  
+  .patch-header h2 {
+    font-size: 24px;
+  }
+  
+  .patch-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .patch-version {
+    padding: 20px;
+  }
+  
+  .patch-version h3 {
+    font-size: 20px;
+  }
+  
+  .stat-item {
+    padding: 10px;
+  }
+  
+  .stat-label {
+    font-size: 13px;
+  }
+  
+  .stat-value {
+    font-size: 15px;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .patch-notes-container {
+    margin: 25px auto;
+    padding: 0 12px;
+  }
+  
+  .patch-notes {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 20px;
+  }
+  
+  /* Center the sidebar content when in single column */
+  .side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .luban-img {
+    max-width: 200px;
+    margin: 0 auto 15px auto;
+  }
+  
+  .stats {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .patch-header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+  }
+  
+  .patch-header h2 {
+    font-size: 22px;
+  }
+  
+  .patch-selector {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .patch-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+  
+  .patch-version {
+    padding: 18px;
+  }
+  
+  .patch-version h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .patch-badge {
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  
+  .changes {
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .change-item {
+    padding: 12px;
+    gap: 15px;
+  }
+  
+  .change-skill {
+    font-size: 13px;
+    min-width: 120px;
+  }
+  
+  .change-desc {
+    font-size: 13px;
+  }
+  
+  .patch-comment {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .patch-notes-container {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+  
+  .patch-notes {
+    padding: 15px;
+    border-radius: 12px;
+  }
+  
+  .side-bar {
+    max-width: 250px;
+    padding: 15px;
+  }
+  
+  .luban-img {
+    max-width: 180px;
+  }
+  
+  .stats {
+    max-width: 220px;
+  }
+  
+  .patch-header {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .patch-header h2 {
+    font-size: 20px;
+  }
+  
+  .patch-selector {
+    gap: 6px;
+  }
+  
+  .patch-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+    min-width: 100px;
+  }
+  
+  .stat-item {
+    padding: 8px 10px;
+    border-left-width: 3px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+  }
+  
+  .stat-value {
+    font-size: 14px;
+  }
+  
+  .patch-version {
+    padding: 15px;
+    border-left-width: 4px;
+  }
+  
+  .patch-version h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .patch-badge {
+    top: 12px;
+    right: 12px;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  
+  .changes {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .change-item {
+    padding: 10px;
+    gap: 12px;
+    flex-direction: column;
+  }
+  
+  .change-skill {
+    font-size: 12px;
+    min-width: auto;
+  }
+  
+  .change-desc {
+    font-size: 12px;
+    width: 100%;
+  }
+  
+  .patch-comment {
+    padding: 10px;
+    font-size: 13px;
+    border-left-width: 2px;
+  }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 399.98px) {
+  .patch-notes-container {
+    margin: 15px auto;
+    padding: 0 8px;
+  }
+  
+  .patch-notes {
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  .side-bar {
+    max-width: 220px;
+    padding: 12px;
+  }
+  
+  .luban-img {
+    max-width: 160px;
+  }
+  
+  .stats {
+    max-width: 200px;
+  }
+  
+  .patch-header h2 {
+    font-size: 18px;
+  }
+  
+  .patch-selector {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .patch-btn {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .stat-item {
+    padding: 7px 9px;
+  }
+  
+  .stat-label {
+    font-size: 11px;
+  }
+  
+  .stat-value {
+    font-size: 13px;
+  }
+  
+  .patch-version {
+    padding: 12px;
+  }
+  
+  .patch-version h3 {
+    font-size: 15px;
+  }
+  
+  .change-item {
+    padding: 8px;
+  }
+  
+  .change-skill,
+  .change-desc {
+    font-size: 11px;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .patch-notes-container {
+    margin: 15px auto;
+  }
+  
+  .patch-notes {
+    padding: 15px;
+  }
+  
+  .side-bar {
+    padding: 15px;
+  }
+  
+  .luban-img {
+    max-height: 120px;
+    max-width: 120px;
+    object-fit: cover;
+  }
+}

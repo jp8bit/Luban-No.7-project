@@ -526,7 +526,38 @@ function positionTooltip(element, tooltipElement) {
     const x = rect.left + scrollLeft + (rect.width / 2);
     const y = rect.top + scrollTop - tooltipElement.offsetHeight - 10;
     
-    tooltipElement.style.left = x + 'px';
-    tooltipElement.style.top = y + 'px';
+    // Calculate the ideal position
+    let leftPosition = x;
     tooltipElement.style.transform = 'translateX(-50%)';
+    
+    // Get tooltip dimensions
+    tooltipElement.style.display = 'block';
+    const tooltipWidth = tooltipElement.offsetWidth;
+    const tooltipHeight = tooltipElement.offsetHeight;
+    
+    // Calculate boundaries
+    const leftBoundary = 10; // Minimum distance from left edge
+    const rightBoundary = window.innerWidth - 10; // Minimum distance from right edge
+    
+    // Check if tooltip would overflow left
+    const tooltipLeftEdge = leftPosition - (tooltipWidth / 2);
+    const tooltipRightEdge = leftPosition + (tooltipWidth / 2);
+    
+    if (tooltipLeftEdge < leftBoundary) {
+        // Tooltip would overflow left, adjust to stay within bounds
+        leftPosition = leftBoundary + (tooltipWidth / 2);
+    } else if (tooltipRightEdge > rightBoundary) {
+        // Tooltip would overflow right, adjust to stay within bounds
+        leftPosition = rightBoundary - (tooltipWidth / 2);
+    }
+    
+    // Check if tooltip would overflow top (above viewport)
+    if (y < 10) {
+        // Position below the element instead of above
+        tooltipElement.style.top = (rect.bottom + scrollTop + 10) + 'px';
+    } else {
+        tooltipElement.style.top = y + 'px';
+    }
+    
+    tooltipElement.style.left = leftPosition + 'px';
 }

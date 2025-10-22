@@ -82,14 +82,14 @@ li, a {
 }
 
 .container {
-  max-width: 1450px; /* The maximum width your content will grow to */
-  margin: 0 auto;    /* "0" for top/bottom, "auto" for left/right (centers it) */
-  padding: 0 1rem;   /* "0" for top/bottom, "1rem" for left/right */
+  max-width: 1450px; 
+  margin: 0 auto;  
+  padding: 0 1rem;  
 }
 
 .luban-banner {
   position: relative;
-  height: 100vh; /* Fixed viewport height */
+  height: 100vh; 
   min-height: 400px;
   max-height: 700px;
   background-image: url('../images/Luban_No.7_conan_skin.webp');
@@ -122,12 +122,13 @@ li, a {
   text-align: center;
   color: white;
   position: absolute;
-  top: 80%; /* Always center vertically */
+  top: 80%; 
   left: 50%;
-  transform: translate(-50%, -50%); /* True center */
+  transform: translate(-50%, -50%); 
   z-index: 2;
-  width: 90%; /* Prevent overflow */
+  width: 90%; 
   padding: 20px;
+  background-color: #21212213;
 }
 
 .text-overlay h1 {
@@ -293,9 +294,8 @@ ol > li {
   border-radius: 50px;
   font-weight: 800;
   font-style: italic;
-  margin-top: -20px; /* Adjust based on your layout */
+  margin-top: -20px;
   z-index: 2;
-  /* Remove absolute positioning */
   position: static;
   margin-left: 0;
 }

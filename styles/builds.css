@@ -66,6 +66,8 @@ li, a {
 
 .nav-links li a:hover {
   color: #33d0ac;
+  padding: 0 30px;
+  background-color: rgb(65, 64, 64);
 }
 
 
@@ -80,24 +82,28 @@ li, a {
 }
 
 .container {
-  max-width: 1450px; /* The maximum width your content will grow to */
-  margin: 0 auto;    /* "0" for top/bottom, "auto" for left/right (centers it) */
-  padding: 0 1rem;   /* "0" for top/bottom, "1rem" for left/right */
+  max-width: 1450px; 
+  margin: 0 auto;    
+  padding: 0 1rem;   
 }
 
 .luban-banner {
   position: relative;
-  overflow: hidden;
+  height: 100vh; 
+  min-height: 400px;
+  max-height: 700px;
+  background-image: url('../images/Luban_No.7_veggie_skin.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 500ms ease-in-out forwards;
 }
 
 .luban-splash {
-  width: 100%;
-  max-height: 734px;
-  font-size: 18px;
-  line-height: 1.5;
-  object-fit: cover;
-  opacity: 0;
-  animation: fadeIn 500ms ease-in-out forwards;
+  display: none;
 }
 
 /* This add the fade at the bottom (huge btw)*/
@@ -115,29 +121,31 @@ li, a {
 .text-overlay {
   text-align: center;
   color: white;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  top: 50%;
+  top: 80%; 
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  margin-top: 22em;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.236);
-  text-shadow: 0px 0px 10em rgb(0, 0, 0, 0.456);
+  transform: translate(-50%, -50%); 
+  z-index: 2;
+  width: 90%; 
+  padding: 20px;
+  background-color: #21212213;
 }
 
 .text-overlay h1 {
-  font-size: 68px;
+  font-size: clamp(2rem, 8vw, 4.25rem);
+  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.8);
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  line-height: 1.2;
 }
 
 
 .text-overlay p {
-  font-size: 48px;
-  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.271);
+  font-size: clamp(1.2rem, 4vw, 3rem);
+  text-shadow: 0px 0px 1em rgba(0, 0, 0, 0.8);
   font-weight: bold;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  line-height: 1.3;
 }
 
 .cat-throw {
@@ -285,20 +293,22 @@ h2::after {
 }
 
 .tooltip, .arcana-tooltip {
-    position: absolute;
-    background: #242524;
-    border: 1.5px solid #a7ecc9;
-    border-radius: 8px;
-    padding: 10px;
-    max-width: 250px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 1000;
-    display: none;
-    /* Add these to ensure proper positioning */
-    transform: translateX(-50%);
-    left: 0;
-    top: 0;
+  position: absolute;
+  background: #242524;
+  border: 1.5px solid #a7ecc9;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: none;
+  transform: none;
+  left: 0;
+  top: 0;
+  max-width: min(250px, 90vw);
+  word-wrap: break-word;
 }
+
 
 .tooltip-header {
   display: flex;
@@ -348,7 +358,7 @@ h2::after {
     clear: both;
     margin-top: 15px;
     font-size: 14px;
-    color: #333; /* Make sure text is visible */
+    color: #333;
 }
 
 .hero-selector {
@@ -360,11 +370,10 @@ h2::after {
 }
 
 .select-hero {
-  margin-top: 50px;
   font-size: 69px; /* lol */
   font-weight: bold;
   text-shadow: 0 0 1em rgba(0, 0, 0, 0.334);
-  border-top: 3px solid #a7ecc9;
+  border-top: 4px solid #FFA500;
 }
 
 .hero-selector img {
@@ -374,18 +383,16 @@ h2::after {
 
 .new-release {
   background-color: rgb(243, 94, 94);
-  position: absolute;
   color: rgb(255, 255, 255);
-  padding: 5px 20px;
-  font-size: 30px;
+  padding: clamp(3px, 1vw, 5px) clamp(12px, 3vw, 20px);
+  font-size: clamp(14px, 3vw, 30px);
   border-radius: 50px;
   font-weight: 800;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: -125px;
-  margin-left: 7.3em;
   font-style: italic;
+  margin-top: -20px; 
+  z-index: 2;
+  position: static;
+  margin-left: 0;
 }
 
 .hero-name {

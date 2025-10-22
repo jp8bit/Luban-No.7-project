@@ -1,0 +1,239 @@
+/* ===== MEDIA QUERIES FOR SKINS PAGE ===== */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1200px) {
+  .carousel-container {
+    max-width: 900px;
+  }
+  
+  .carousel {
+    height: 450px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 992px) {
+  .carousel-container {
+    max-width: 800px;
+    margin-top: 30px;
+  }
+  
+  .carousel {
+    height: 400px;
+  }
+  
+  .slide-caption {
+    padding: 15px;
+    padding-top: 30px;
+  }
+  
+  .slide-caption h3 {
+    font-size: 1.3rem;
+  }
+  
+  .slide-caption p {
+    font-size: 0.9rem;
+  }
+  
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 100%;
+    margin: 20px 1px;
+    border-radius: 12px;
+  }
+  
+  .carousel {
+    height: 350px;
+  }
+  
+  .slide-caption {
+    padding: 12px;
+    padding-top: 25px;
+  }
+  
+  .slide-caption h3 {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+  }
+  
+  .slide-caption p {
+    font-size: 0.85rem;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .prev-btn {
+    left: 15px;
+  }
+  
+  .next-btn {
+    right: 15px;
+  }
+  
+  .carousel-dots {
+    bottom: 15px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+  .carousel-container {
+    border-radius: 10px;
+    margin: 15px -2px;
+  }
+  
+  .carousel {
+    height: 300px;
+  }
+  
+  .slide-caption {
+    padding: 10px;
+    padding-top: 20px;
+  }
+  
+  .slide-caption h3 {
+    font-size: 1.1rem;
+  }
+  
+  .slide-caption p {
+    font-size: 0.8rem;
+  }
+  
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  .carousel-dots {
+    bottom: 12px;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .dot.active {
+    transform: scale(1.1);
+  }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 400px) {
+  .carousel-container {
+    margin: 10px 8px;
+    border-radius: 8px;
+  }
+  
+  .carousel {
+    height: 250px;
+  }
+  
+  .slide-caption {
+    padding: 8px;
+    padding-top: 15px;
+  }
+  
+  .slide-caption h3 {
+    font-size: 1rem;
+  }
+  
+  .slide-caption p {
+    font-size: 0.75rem;
+  }
+  
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+  
+  .prev-btn {
+    left: 8px;
+  }
+  
+  .next-btn {
+    right: 8px;
+  }
+  
+  .carousel-dots {
+    bottom: 10px;
+    gap: 6px;
+  }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .carousel {
+    height: 250px;
+  }
+  
+  .carousel-container {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .slide-caption {
+    padding: 8px;
+    padding-top: 15px;
+  }
+  
+  .slide-caption h3 {
+    font-size: 1rem;
+  }
+  
+  .slide-caption p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .carousel-btn {
+    background: rgba(255, 255, 255, 0.3);
+    width: 44px;
+    height: 44px;
+  }
+  
+  .carousel-btn:hover {
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .dot {
+    width: 14px;
+    height: 14px;
+  }
+}

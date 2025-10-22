@@ -129,6 +129,7 @@ li, a {
   z-index: 2;
   width: 90%; /* Prevent overflow */
   padding: 20px;
+  background-color: #21212213;
 }
 
 .text-overlay h1 {

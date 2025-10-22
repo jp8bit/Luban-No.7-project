@@ -1,0 +1,299 @@
+/* ===== MEDIA QUERIES FOR MATCHUPS PAGE ===== */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1200px) {
+  .matchup-section {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 35px;
+  }
+  
+  .matchup-link img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 992px) {
+  .matchup-section {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    padding: 0 15px;
+  }
+  
+  .matchup-link img {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .hero-name-label {
+    font-size: 14px;
+  }
+  
+  .matchup-section-header {
+    font-size: 35px;
+    margin: 25px 0 20px 0;
+  }
+  
+  .explanation-text {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  
+  .threat-info {
+    font-size: 1.8em;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+  .matchup-section {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 25px;
+    padding: 0 10px;
+  }
+  
+  .matchup-link img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .hero-name-label {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  
+  .matchup-section-header {
+    font-size: 30px;
+    margin: 20px 0 15px 0;
+    gap: 10px;
+  }
+  
+  .matchup-explanation {
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .matchup-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-name {
+    font-size: 24px;
+  }
+  
+  .explanation-text {
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 12px;
+    margin-top: 15px;
+  }
+  
+  .matchup-summary {
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 10px 12px;
+  }
+  
+  .threat-item {
+    padding: 12px;
+    gap: 15px;
+  }
+  
+  .threat-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .threat-info {
+    font-size: 1.6em;
+  }
+  
+  .threat-name {
+    font-size: 14px;
+  }
+  
+  .threat-reason {
+    font-size: 1.3em;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+  .matchup-section {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 20px;
+    padding: 0 8px;
+  }
+  
+  .matchup-link {
+    padding: 10px;
+  }
+  
+  .matchup-link img {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .hero-name-label {
+    font-size: 11px;
+    margin-top: 6px;
+  }
+  
+  .matchup-section-header {
+    font-size: 26px;
+    margin: 15px 0 12px 0;
+    gap: 8px;
+  }
+  
+  .matchup-explanation {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 12px;
+  }
+  
+  .hero-name {
+    font-size: 22px;
+  }
+  
+  .explanation-text {
+    font-size: 18.8px;
+    line-height: 1.4;
+    padding: 10px;
+    margin-top: 12px;
+  }
+  
+  .matchup-summary {
+    font-size: 13px;
+    margin: 8px 0;
+    padding: 8px 10px;
+  }
+  
+  .threats-header {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+  
+  .threat-item {
+    padding: 10px;
+    gap: 12px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .threat-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .threat-info {
+    font-size: 1.4em;
+    width: 100%;
+  }
+  
+  .threat-name {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  
+  .threat-reason {
+    font-size: 1.2em;
+    line-height: 1.3;
+  }
+  
+  .threat-severity {
+    margin-left: 0;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 400px) {
+  .matchup-section {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 15px;
+    padding: 0 5px;
+  }
+  
+  .matchup-link {
+    padding: 8px;
+  }
+  
+  .matchup-link img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .hero-name-label {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+  
+  .matchup-section-header {
+    font-size: 22px;
+    margin: 12px 0 10px 0;
+  }
+  
+  .matchup-explanation {
+    padding: 12px;
+    margin-top: 12px;
+  }
+  
+  .hero-name {
+    font-size: 20px;
+  }
+  
+  .explanation-text {
+    font-size: 15px;
+    padding: 8px;
+    margin-top: 10px;
+  }
+  
+  .threat-item {
+    padding: 8px;
+    gap: 10px;
+  }
+  
+  .threat-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .threat-info {
+    font-size: 1.3em;
+  }
+  
+  .threat-name {
+    font-size: 12px;
+  }
+  
+  .threat-reason {
+    font-size: 1.1em;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .matchup-section {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+  }
+  
+  .matchup-link img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .hero-name-label {
+    font-size: 10px;
+  }
+  
+  .matchup-explanation {
+    padding: 15px;
+    margin-top: 15px;
+  }
+}
