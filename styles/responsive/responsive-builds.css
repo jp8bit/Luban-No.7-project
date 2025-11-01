@@ -173,9 +173,7 @@
   }
   
   .cat-smooch {
-    max-width: 30px;
-    max-height: 30px;
-    margin-left: 5px;
+    display: none;
   }
   
   .item-link, .arcana-link {
